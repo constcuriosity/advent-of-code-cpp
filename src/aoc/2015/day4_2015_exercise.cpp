@@ -15,8 +15,8 @@ static_const int32 k_line_size = k_kilobyte;
 
 //-------------- prototypes
 
-void execute_day4_part_one(FILE* file);
-void execute_day4_part_two(FILE* file);
+void execute_2015_day4_part1(FILE* file);
+void execute_2015_day4_part2(FILE* file);
 
 static_function void print_hash(const s_md5_digest& digest);
 
@@ -27,13 +27,13 @@ extern const s_aoc_exercise_data k_2015_day4_exercise
 	2015,
 	4,
 	"The Ideal Stocking Stuffer",
-	execute_day4_part_one,
-	execute_day4_part_two
+	execute_2015_day4_part1,
+	execute_2015_day4_part2
 };
 
 //-------------- public implementations
 
-void execute_day4_part_one(FILE* file)
+void execute_2015_day4_part1(FILE* file)
 {
 	// $TODO This should be able to allocate the correct amount of space for the line
 	char* line = static_cast<char*>(malloc(k_line_size));
@@ -63,7 +63,7 @@ void execute_day4_part_one(FILE* file)
 	free(line);
 }
 
-void execute_day4_part_two(FILE* file)
+void execute_2015_day4_part2(FILE* file)
 {
 	// $TODO This should be able to allocate the correct amount of space for the line
 	char* line = static_cast<char*>(malloc(k_line_size));

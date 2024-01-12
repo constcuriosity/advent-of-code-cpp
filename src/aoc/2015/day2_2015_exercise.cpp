@@ -9,8 +9,8 @@
 
 //-------------- prototypes
 
-void execute_day2_part_one(FILE* file);
-void execute_day2_part_two(FILE* file);
+void execute_2015_day2_part1(FILE* file);
+void execute_2015_day2_part2(FILE* file);
 
 //-------------- globals
 
@@ -19,13 +19,13 @@ extern const s_aoc_exercise_data k_2015_day2_exercise
 	2015,
 	2,
 	"I Was Told There Would Be No Math",
-	execute_day2_part_one,
-	execute_day2_part_two
+	execute_2015_day2_part1,
+	execute_2015_day2_part2
 };
 
 //-------------- definitions
 
-void execute_day2_part_one(FILE* file)
+void execute_2015_day2_part1(FILE* file)
 {
 	int32 total_sqft = 0;
 	int32 current_length = 0;
@@ -48,7 +48,7 @@ void execute_day2_part_one(FILE* file)
 	std::cout << "The elves need " << total_sqft << " sqft of wrapping paper" << std::endl;
 }
 
-void execute_day2_part_two(FILE* file)
+void execute_2015_day2_part2(FILE* file)
 {
 	int32 total_feet = 0;
 	int32 current_length = 0;

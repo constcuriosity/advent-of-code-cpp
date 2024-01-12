@@ -13,8 +13,8 @@
 
 //-------------- prototypes
 
-void execute_day2_part_one(FILE* file);
-void execute_day2_part_two(FILE* file);
+void execute_2023_day2_part1(FILE* file);
+void execute_2023_day2_part2(FILE* file);
 
 //-------------- globals
 
@@ -23,13 +23,13 @@ extern const s_aoc_exercise_data k_2023_day2_exercise
 	2023,
 	2,
 	"Cube Conundrum",
-	execute_day2_part_one,
-	execute_day2_part_two
+	execute_2023_day2_part1,
+	execute_2023_day2_part2
 };
 
 //-------------- definitions
 
-void execute_day2_part_one(FILE* file)
+void execute_2023_day2_part1(FILE* file)
 {
 	c_medium_string line_buffer;
 
@@ -98,7 +98,7 @@ void execute_day2_part_one(FILE* file)
 	std::cout << "The total sum of all viable games with 12 red, 13 green, and 14 blue cubes is: " << total_game_ids << std::endl;
 }
 
-void execute_day2_part_two(FILE* file)
+void execute_2023_day2_part2(FILE* file)
 {
 	c_medium_string line_buffer;
 

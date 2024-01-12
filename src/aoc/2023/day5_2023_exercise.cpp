@@ -15,8 +15,8 @@
 
 //-------------- prototypes
 
-void execute_day5_part_one(FILE* file);
-void execute_day5_part_two(FILE* file);
+void execute_2023_day5_part1(FILE* file);
+void execute_2023_day5_part2(FILE* file);
 
 struct s_transform_range
 {
@@ -87,13 +87,13 @@ extern const s_aoc_exercise_data k_2023_day5_exercise
 	2023,
 	5,
 	"If You Give A Seed A Fertilizer",
-	execute_day5_part_one,
-	execute_day5_part_two
+	execute_2023_day5_part1,
+	execute_2023_day5_part2
 };
 
 //-------------- definitions
 
-void execute_day5_part_one(FILE* file)
+void execute_2023_day5_part1(FILE* file)
 {
 	c_medium_string line_buffer;
 
@@ -192,7 +192,7 @@ void execute_day5_part_one(FILE* file)
 	std::cout << "The lowest location after all those locations is: " << lowest_location << std::endl;
 }
 
-void execute_day5_part_two(FILE* file)
+void execute_2023_day5_part2(FILE* file)
 {
 	c_medium_string line_buffer;
 

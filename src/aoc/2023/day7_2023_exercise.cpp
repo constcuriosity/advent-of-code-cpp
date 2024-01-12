@@ -125,8 +125,8 @@ public:
 e_card_value get_card_value_for_char(char value, e_j_mode mode);
 e_card_hand get_hand_for_cards(const c_card_array& cards);
 
-void execute_day7_part_one(FILE* file);
-void execute_day7_part_two(FILE* file);
+void execute_2023_day7_part1(FILE* file);
+void execute_2023_day7_part2(FILE* file);
 
 //-------------- globals
 
@@ -135,13 +135,13 @@ extern const s_aoc_exercise_data k_2023_day7_exercise
 	2023,
 	7,
 	"Camel Cards",
-	execute_day7_part_one,
-	execute_day7_part_two
+	execute_2023_day7_part1,
+	execute_2023_day7_part2
 };
 
 //-------------- definitions
 
-void execute_day7_part_one(FILE* file)
+void execute_2023_day7_part1(FILE* file)
 {
 	c_medium_string line_buffer;
 
@@ -190,7 +190,7 @@ void execute_day7_part_one(FILE* file)
 	std::cout << "Total winnings of all hands w/ Jack rules: " << total_winnings << std::endl;
 }
 
-void execute_day7_part_two(FILE* file)
+void execute_2023_day7_part2(FILE* file)
 {
 	c_medium_string line_buffer;
 

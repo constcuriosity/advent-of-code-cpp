@@ -13,8 +13,8 @@
 
 //-------------- prototypes
 
-void execute_day6_part_one(FILE* file);
-void execute_day6_part_two(FILE* file);
+void execute_2023_day6_part1(FILE* file);
+void execute_2023_day6_part2(FILE* file);
 
 struct s_race
 {
@@ -30,13 +30,13 @@ extern const s_aoc_exercise_data k_2023_day6_exercise
 	2023,
 	6,
 	"Wait For It",
-	execute_day6_part_one,
-	execute_day6_part_two
+	execute_2023_day6_part1,
+	execute_2023_day6_part2
 };
 
 //-------------- definitions
 
-void execute_day6_part_one(FILE* file)
+void execute_2023_day6_part1(FILE* file)
 {
 	c_medium_string line_buffer;
 
@@ -98,7 +98,7 @@ void execute_day6_part_one(FILE* file)
 	std::cout << "The margin of error across all races is: " << margin_of_error << std::endl;
 }
 
-void execute_day6_part_two(FILE* file)
+void execute_2023_day6_part2(FILE* file)
 {
 	c_medium_string line_buffer;
 	c_medium_string number_buffer;

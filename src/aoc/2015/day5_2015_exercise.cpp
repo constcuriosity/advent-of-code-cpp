@@ -9,8 +9,8 @@
 
 //-------------- prototypes
 
-void execute_day5_part_one(FILE* file);
-void execute_day5_part_two(FILE* file);
+void execute_2015_day5_part1(FILE* file);
+void execute_2015_day5_part2(FILE* file);
 
 static_function bool is_nice_string_v1(const c_small_string& string);
 static_function bool is_nice_string_v2(const c_small_string& string);
@@ -25,13 +25,13 @@ extern const s_aoc_exercise_data k_2015_day5_exercise
 	2015,
 	5,
 	"Doesn't He Have Intern-Elves For This?",
-	execute_day5_part_one,
-	execute_day5_part_two
+	execute_2015_day5_part1,
+	execute_2015_day5_part2
 };
 
 //-------------- public implementations
 
-void execute_day5_part_one(FILE* file)
+void execute_2015_day5_part1(FILE* file)
 {
 	c_small_string line_buffer;
 	int32 nice_count = 0;
@@ -46,7 +46,7 @@ void execute_day5_part_one(FILE* file)
 	std::cout << "There are " << nice_count << " nice strings in the file using the first ruleset." << std::endl << std::endl;
 }
 
-void execute_day5_part_two(FILE* file)
+void execute_2015_day5_part2(FILE* file)
 {
 	c_small_string line_buffer;
 	int32 nice_count = 0;

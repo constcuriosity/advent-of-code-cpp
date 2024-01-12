@@ -13,8 +13,8 @@
 
 //-------------- prototypes
 
-void execute_day1_part_one(FILE* file);
-void execute_day1_part_two(FILE* file);
+void execute_2023_day1_part1(FILE* file);
+void execute_2023_day1_part2(FILE* file);
 
 //-------------- globals
 
@@ -23,13 +23,13 @@ extern const s_aoc_exercise_data k_2023_day1_exercise
 	2023,
 	1,
 	"Trebuchet?!",
-	execute_day1_part_one,
-	execute_day1_part_two
+	execute_2023_day1_part1,
+	execute_2023_day1_part2
 };
 
 //-------------- definitions
 
-void execute_day1_part_one(FILE* file)
+void execute_2023_day1_part1(FILE* file)
 {
 	c_medium_string line_buffer;
 
@@ -70,7 +70,7 @@ void execute_day1_part_one(FILE* file)
 	std::cout << "The total callibration amount for the first question is: " << total << std::endl;
 }
 
-void execute_day1_part_two(FILE* file)
+void execute_2023_day1_part2(FILE* file)
 {
 	c_medium_string line_buffer;
 

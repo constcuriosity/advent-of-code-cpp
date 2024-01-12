@@ -12,8 +12,8 @@ const int32 k_line_size = k_kilobyte * 128;
 
 //-------------- prototypes
 
-void execute_day3_part_one(FILE* file);
-void execute_day3_part_two(FILE* file);
+void execute_2015_day_part1(FILE* file);
+void execute_2015_day3_part2(FILE* file);
 
 //-------------- globals
 
@@ -22,8 +22,8 @@ extern const s_aoc_exercise_data k_2015_day3_exercise
 	2015,
 	3,
 	"Perfectly Spherical Houses in a Vacuum",
-	execute_day3_part_one,
-	execute_day3_part_two
+	execute_2015_day_part1,
+	execute_2015_day3_part2
 };
 
 //-------------- private definitions
@@ -47,7 +47,7 @@ bool operator <(const s_point2& lhs, const s_point2& rhs)
 
 //-------------- public implementations
 
-void execute_day3_part_one(FILE* file)
+void execute_2015_day_part1(FILE* file)
 {
 	// $TODO This should be able to allocate the correct amount of space for the line
 	char* line = static_cast<char*>(malloc(k_line_size));
@@ -95,7 +95,7 @@ void execute_day3_part_one(FILE* file)
 	free(line);
 }
 
-void execute_day3_part_two(FILE* file)
+void execute_2015_day3_part2(FILE* file)
 {
 	// $TODO This should be able to allocate the correct amount of space for the line
 	char* line = static_cast<char*>(malloc(k_line_size));

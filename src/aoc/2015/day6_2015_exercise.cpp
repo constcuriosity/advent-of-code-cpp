@@ -29,8 +29,8 @@ struct s_light_change
 	uint32 end_y;
 };
 
-void execute_day6_part_one(FILE* file);
-void execute_day6_part_two(FILE* file);
+void execute_2015_day6_part1(FILE* file);
+void execute_2015_day6_part2(FILE* file);
 
 static_function void parse_light_change(const c_medium_string& line, s_light_change* out_change);
 
@@ -41,13 +41,13 @@ extern const s_aoc_exercise_data k_2015_day6_exercise
 	2015,
 	6,
 	"Doesn't He Have Intern-Elves For This?",
-	execute_day6_part_one,
-	execute_day6_part_two
+	execute_2015_day6_part1,
+	execute_2015_day6_part2
 };
 
 //-------------- public implementations
 
-void execute_day6_part_one(FILE* file)
+void execute_2015_day6_part1(FILE* file)
 {
 	c_static_bit_grid<1000, 1000>* light_grid = new c_static_bit_grid<1000, 1000>();
 	c_medium_string line_buffer;
@@ -91,7 +91,7 @@ void execute_day6_part_one(FILE* file)
 	delete light_grid;
 }
 
-void execute_day6_part_two(FILE* file)
+void execute_2015_day6_part2(FILE* file)
 {
 	c_static_grid<int32, 1000, 1000>* grid = new c_static_grid<int32, 1000, 1000>(0);
 

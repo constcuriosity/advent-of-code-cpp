@@ -14,8 +14,8 @@
 
 //-------------- prototypes
 
-void execute_day4_part_one(FILE* file);
-void execute_day4_part_two(FILE* file);
+void execute_2023_day4_part1(FILE* file);
+void execute_2023_day4_part2(FILE* file);
 
 //-------------- globals
 
@@ -24,13 +24,13 @@ extern const s_aoc_exercise_data k_2023_day4_exercise
 	2023,
 	4,
 	"Scratchcards",
-	execute_day4_part_one,
-	execute_day4_part_two
+	execute_2023_day4_part1,
+	execute_2023_day4_part2
 };
 
 //-------------- definitions
 
-void execute_day4_part_one(FILE* file)
+void execute_2023_day4_part1(FILE* file)
 {
 	int32 total_points = 0;
 	c_medium_string line_buffer;
@@ -85,7 +85,7 @@ void execute_day4_part_one(FILE* file)
 	std::cout << "The number of earned points across all games is: " << total_points << std::endl;
 }
 
-void execute_day4_part_two(FILE* file)
+void execute_2023_day4_part2(FILE* file)
 {
 	c_medium_string line_buffer;
 

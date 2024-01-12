@@ -26,8 +26,8 @@ struct s_node
 int32 convert_to_id(s_string_view view);
 int32 convert_to_id(const char *string);
 
-void execute_day8_part_one(FILE* file);
-void execute_day8_part_two(FILE* file);
+void execute_2023_day8_part1(FILE* file);
+void execute_2023_day8_part2(FILE* file);
 
 //-------------- globals
 
@@ -36,13 +36,13 @@ extern const s_aoc_exercise_data k_2023_day8_exercise
 	2023,
 	8,
 	"Haunted Wasteland",
-	execute_day8_part_one,
-	execute_day8_part_two
+	execute_2023_day8_part1,
+	execute_2023_day8_part2
 };
 
 //-------------- definitions
 
-void execute_day8_part_one(FILE* file)
+void execute_2023_day8_part1(FILE* file)
 {
 	c_kilo_string instruction_buffer;
 	fgets(instruction_buffer.get_string(), instruction_buffer.k_capacity, file);
@@ -108,7 +108,7 @@ void execute_day8_part_one(FILE* file)
 	std::cout << "It took " << steps << " steps to travel from node AAA to ZZZ." << std::endl;
 }
 
-void execute_day8_part_two(FILE* file)
+void execute_2023_day8_part2(FILE* file)
 {
 	std::cout << "Day 8 Question 2" << std::endl;
 }
