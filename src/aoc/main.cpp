@@ -9,13 +9,16 @@
 //-------------- data
 
 extern const s_aoc_exercise_data* k_2015_exercises[];
+extern const s_aoc_exercise_data* k_2016_exercises[];
 extern const s_aoc_exercise_data* k_2023_exercises[];
 extern const uint32 k_2015_exercise_count;
+extern const uint32 k_2016_exercise_count;
 extern const uint32 k_2023_exercise_count;
 
 const s_aoc_year_exercises exercises[] =
 {
 	{ 2015, c_exercise_view(k_2015_exercises, static_cast<int32>(k_2015_exercise_count)) },
+	{ 2016, c_exercise_view(k_2016_exercises, static_cast<int32>(k_2016_exercise_count)) },
 	{ 2023, c_exercise_view(k_2023_exercises, static_cast<int32>(k_2023_exercise_count)) },
 };
 
