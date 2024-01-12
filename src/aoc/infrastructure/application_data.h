@@ -13,15 +13,23 @@ typedef c_array_view<const s_aoc_exercise_data*> c_exercise_view;
 
 //-------------- definitions
 
+struct s_aoc_year_exercises
+{
+	int32 year;
+	c_exercise_view exercises;
+};
+
+typedef c_array_view<const s_aoc_year_exercises> c_aoc_year_exercises_view;
+
 struct s_application_data
 {
 	s_application_data()
-		: day_index(0)
-		, year(2015)
+		: day(NONE)
+		, year(NONE)
 	{}
 
-	c_exercise_view exercises;
-	int32 day_index;
+	c_aoc_year_exercises_view exercises;
+	int32 day;
 	int32 year;
 };
 

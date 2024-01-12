@@ -7,7 +7,8 @@ enum class e_aoc_states
 {
 	introduction,
 	control_flow,
-	gather_day,
+	select_year,
+	select_day,
 	execute_day,
 	terminate,
 

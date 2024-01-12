@@ -40,12 +40,25 @@ private:
 	s_application_data* m_data;
 };
 
-class c_aoc_gather_day_state : public c_state<e_aoc_states>
+class c_aoc_select_year_state : public c_state<e_aoc_states>
 {
 public:
-	c_aoc_gather_day_state(s_application_data* data) : m_data(data) {}
+	c_aoc_select_year_state(s_application_data* data) : m_data(data) {}
 
-	e_aoc_states get_state_id() const override { return e_aoc_states::gather_day; }
+	e_aoc_states get_state_id() const override { return e_aoc_states::select_year; }
+	void enter() override;
+	void update() override;
+
+private:
+	s_application_data* m_data;
+};
+
+class c_aoc_select_day_state : public c_state<e_aoc_states>
+{
+public:
+	c_aoc_select_day_state(s_application_data* data) : m_data(data) {}
+
+	e_aoc_states get_state_id() const override { return e_aoc_states::select_day; }
 	void enter() override;
 	void update() override;
 
@@ -60,7 +73,6 @@ public:
 
 	e_aoc_states get_state_id() const override { return e_aoc_states::execute_day; }
 	void enter() override;
-	void exit() override;
 
 private:
 	s_application_data* m_data;

@@ -23,3 +23,5 @@ extern const s_aoc_exercise_data* k_2015_exercises[] =
 	&k_2015_day6_exercise,
 	&k_2015_day7_exercise,
 };
+
+extern const uint32 k_2015_exercise_count = ARRAY_SIZE(k_2015_exercises);

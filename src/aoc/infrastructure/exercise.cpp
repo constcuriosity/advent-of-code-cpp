@@ -11,7 +11,9 @@
 void c_aoc_exercise_runner::initialize()
 {
 	c_kilo_string file_path;
-	file_path.print("data/day%d.txt", m_data.day_index);
+	file_path.print("data/%d/day%d.txt",
+		m_data.year,
+		m_data.day);
 
 	if (file_exists(file_path.get_string()))
 	{
