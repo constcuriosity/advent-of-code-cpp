@@ -36,8 +36,9 @@ static_function void parse_light_change(const c_medium_string& line, s_light_cha
 
 //-------------- globals
 
-extern s_aoc_exercise_data day6
+extern const s_aoc_exercise_data k_2015_day6_exercise
 {
+	2015,
 	6,
 	"Doesn't He Have Intern-Elves For This?",
 	execute_day6_part_one,

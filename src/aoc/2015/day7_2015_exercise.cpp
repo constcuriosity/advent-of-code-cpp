@@ -12,8 +12,9 @@ void execute_day7_part_two(FILE* file);
 
 //-------------- globals
 
-extern s_aoc_exercise_data day7
+extern const s_aoc_exercise_data k_2015_day7_exercise
 {
+	2015,
 	7,
 	"Some Assembly Required",
 	execute_day7_part_one,

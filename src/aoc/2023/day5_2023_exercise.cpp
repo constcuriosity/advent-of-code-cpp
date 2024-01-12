@@ -82,8 +82,9 @@ public:
 
 //-------------- globals
 
-extern s_aoc_exercise_data day5
+extern const s_aoc_exercise_data k_2023_day5_exercise
 {
+	2023,
 	5,
 	"If You Give A Seed A Fertilizer",
 	execute_day5_part_one,

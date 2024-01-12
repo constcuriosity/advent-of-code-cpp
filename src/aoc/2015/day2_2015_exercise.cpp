@@ -14,8 +14,9 @@ void execute_day2_part_two(FILE* file);
 
 //-------------- globals
 
-extern s_aoc_exercise_data day2
+extern const s_aoc_exercise_data k_2015_day2_exercise
 {
+	2015,
 	2,
 	"I Was Told There Would Be No Math",
 	execute_day2_part_one,

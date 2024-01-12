@@ -130,8 +130,9 @@ void execute_day7_part_two(FILE* file);
 
 //-------------- globals
 
-extern s_aoc_exercise_data day7
+extern const s_aoc_exercise_data k_2023_day7_exercise
 {
+	2023,
 	7,
 	"Camel Cards",
 	execute_day7_part_one,

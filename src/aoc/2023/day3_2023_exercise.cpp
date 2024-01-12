@@ -24,8 +24,9 @@ uint64 capture_number_at_coord(const c_engine_schematic* schematic, uint32 colum
 
 //-------------- globals
 
-extern s_aoc_exercise_data day3
+extern const s_aoc_exercise_data k_2023_day3_exercise
 {
+	2023,
 	3,
 	"Gear Ratios",
 	execute_day3_part_one,

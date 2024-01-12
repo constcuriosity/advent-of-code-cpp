@@ -18,8 +18,9 @@ void execute_day2_part_two(FILE* file);
 
 //-------------- globals
 
-extern s_aoc_exercise_data day2
+extern const s_aoc_exercise_data k_2023_day2_exercise
 {
+	2023,
 	2,
 	"Cube Conundrum",
 	execute_day2_part_one,

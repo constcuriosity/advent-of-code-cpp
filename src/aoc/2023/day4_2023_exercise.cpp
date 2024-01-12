@@ -19,8 +19,9 @@ void execute_day4_part_two(FILE* file);
 
 //-------------- globals
 
-extern s_aoc_exercise_data day4
+extern const s_aoc_exercise_data k_2023_day4_exercise
 {
+	2023,
 	4,
 	"Scratchcards",
 	execute_day4_part_one,

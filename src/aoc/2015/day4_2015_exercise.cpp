@@ -22,8 +22,9 @@ static_function void print_hash(const s_md5_digest& digest);
 
 //-------------- globals
 
-extern s_aoc_exercise_data day4
+extern const s_aoc_exercise_data k_2015_day4_exercise
 {
+	2015,
 	4,
 	"The Ideal Stocking Stuffer",
 	execute_day4_part_one,

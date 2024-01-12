@@ -31,8 +31,9 @@ void execute_day8_part_two(FILE* file);
 
 //-------------- globals
 
-extern s_aoc_exercise_data day8
+extern const s_aoc_exercise_data k_2023_day8_exercise
 {
+	2023,
 	8,
 	"Haunted Wasteland",
 	execute_day8_part_one,

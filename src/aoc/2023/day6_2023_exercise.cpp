@@ -25,8 +25,9 @@ struct s_race
 
 //-------------- globals
 
-extern s_aoc_exercise_data day6
+extern const s_aoc_exercise_data k_2023_day6_exercise
 {
+	2023,
 	6,
 	"Wait For It",
 	execute_day6_part_one,

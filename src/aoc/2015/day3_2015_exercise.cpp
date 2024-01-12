@@ -17,8 +17,9 @@ void execute_day3_part_two(FILE* file);
 
 //-------------- globals
 
-extern s_aoc_exercise_data day3
+extern const s_aoc_exercise_data k_2015_day3_exercise
 {
+	2015,
 	3,
 	"Perfectly Spherical Houses in a Vacuum",
 	execute_day3_part_one,

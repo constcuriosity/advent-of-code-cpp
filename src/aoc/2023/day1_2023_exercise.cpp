@@ -18,8 +18,9 @@ void execute_day1_part_two(FILE* file);
 
 //-------------- globals
 
-extern s_aoc_exercise_data day1
+extern const s_aoc_exercise_data k_2023_day1_exercise
 {
+	2023,
 	1,
 	"Trebuchet?!",
 	execute_day1_part_one,

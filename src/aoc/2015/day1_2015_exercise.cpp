@@ -16,8 +16,9 @@ void execute_day1_part_two(FILE* file);
 
 //-------------- globals
 
-extern s_aoc_exercise_data day1
+extern const s_aoc_exercise_data k_2015_day1_exercise
 {
+	2015,
 	1,
 	"Not Quite Lisp",
 	execute_day1_part_one,

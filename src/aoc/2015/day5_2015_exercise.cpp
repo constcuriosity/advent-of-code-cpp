@@ -20,8 +20,9 @@ static_function bool is_banned_sequence(char first_char, char second_char);
 
 //-------------- globals
 
-extern s_aoc_exercise_data day5
+extern const s_aoc_exercise_data k_2015_day5_exercise
 {
+	2015,
 	5,
 	"Doesn't He Have Intern-Elves For This?",
 	execute_day5_part_one,
