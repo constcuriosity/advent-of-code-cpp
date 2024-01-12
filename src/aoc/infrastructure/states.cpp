@@ -158,7 +158,7 @@ void c_aoc_select_day_state::update()
 
 		std::cout << std::endl;
 
-		if (m_data->exercises[year_index].exercises.is_valid_index(day_index))
+		if (m_data->exercises[year_index].exercises.is_valid_index(day_index - 1))
 		{
 			m_data->day = day_index;
 			m_transistor->request_transition(e_aoc_states::execute_day);
