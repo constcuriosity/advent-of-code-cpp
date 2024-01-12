@@ -1,5 +1,5 @@
 
-#include "aoc/aoc_machine.h"
+#include "aoc/infrastructure/aoc_machine.h"
 
 #include "foundation/utilities/string_utilities.h"
 #include "foundation/containers/view/array_view.h"
