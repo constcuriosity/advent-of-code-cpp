@@ -9,13 +9,12 @@ namespace AOC
 	{
 		public AOCProject()
 		{
-			Name = "AdventOfCode2023";
+			Name = "AdventOfCode";
 
 			RootPath = @"[project.SharpmakeCsPath]\..";
 			SourceRootPath = @"[project.RootPath]\src\aoc";
 		}
 
-		[Configure]
 		public override void ConfigureAll(Configuration conf, Target target)
 		{
 			base.ConfigureAll(conf, target);

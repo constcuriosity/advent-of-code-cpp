@@ -17,7 +17,7 @@ namespace AOC
 		public AOCSolution()
 		{
 			// The name of the solution
-			Name = "AdventOfCode2023";
+			Name = "AdventOfCode";
 
 			AddTargets(CommonTargets.GenerateTargets());
 		}
