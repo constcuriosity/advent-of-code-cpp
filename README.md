@@ -1,7 +1,7 @@
 Advent of Code C++
 ==================
 
-All of my Avent of Code exercises written in C++
+All of my Advent of Code exercises written in C++
 
 Setup
 -----
