@@ -4,7 +4,7 @@
 #include "aoc/infrastructure/exercise.h"
 
 #include "foundation/containers/static/static_string.h"
-#include "foundation/containers/static/static_bit_grid.h"
+#include "foundation/containers/dynamic/dynamic_set.h"
 #include "foundation/memory/memory_utilities.h"
 #include "foundation/math/int_math.h"
 
@@ -39,6 +39,37 @@ e_facing_direction k_right_facing[] =
 };
 
 //-------------- prototypes
+
+struct s_point
+{
+	s_point() : x(0), y(0) {}
+	s_point(int32 in_x, int32 in_y) : x(in_x), y(in_y) {}
+
+	int32 x;
+	int32 y;
+};
+
+bool operator==(const s_point& left, const s_point& right)
+{
+	return left.x == right.x && left.y == right.y;
+}
+
+bool operator!=(const s_point& left, const s_point& right)
+{
+	return !(left == right);
+}
+
+bool operator<(const s_point& left, const s_point& right)
+{
+	return (left.x < right.x) ||
+		(left.x == right.x && (left.y < right.y));
+}
+
+bool operator>(const s_point& left, const s_point& right)
+{
+	return (left.x > right.x) ||
+		(left.x == right.x && (left.y > right.y));
+}
 
 void execute_2016_day1_part1(FILE* file);
 void execute_2016_day1_part2(FILE* file);
@@ -75,13 +106,11 @@ void execute_2016_day1_part1(FILE* file)
 		 if (current_token.string[0] == 'L')
 		 {
 			 current_facing = k_left_facing[current_facing];
-			 std::cout << "Turning Left" << std::endl;
 
 		 }
 		 else if (current_token.string[0] == 'R')
 		 {
 			 current_facing = k_right_facing[current_facing];
-			 std::cout << "Turning Right" << std::endl;
 		 }
 		 else
 		 {
@@ -92,8 +121,6 @@ void execute_2016_day1_part1(FILE* file)
 		 distance_view.string++;
 
 		 uint32 distance = static_cast<uint32>(c_string_utilities::to_unsigned_integer(distance_view));
-
-		 std::cout << "Going distance " << distance << std::endl;
 
 		 switch (current_facing)
 		 {
@@ -120,15 +147,16 @@ void execute_2016_day1_part1(FILE* file)
 
 void execute_2016_day1_part2(FILE* file)
 {
-#if 0 // Disable for now
 	c_kilo_string line_buffer;
 
+	s_point target_point;
+	bool target_found = false;
 	e_facing_direction current_facing = _facing_direction_north;
 	int32 start_x = 0;
 	int32 start_y = 0;
 
-	c_static_bit_grid<1000,1000> *grid = c_memory_utilities::allocate<c_static_bit_grid<1000, 1000>>();
-	new(grid) c_static_bit_grid<1000,1000>();
+	c_dynamic_set<s_point> traveled_set;
+	traveled_set.add(s_point());
 
 	fgets(line_buffer.get_string(), c_kilo_string::k_capacity, file);
 
@@ -136,21 +164,15 @@ void execute_2016_day1_part2(FILE* file)
 
 	do
 	{
-		int32 current_x = start_x;
-		int32 current_y = start_y;
-
 		s_string_view current_token = direction_tokens.get_token();
 
 		if (current_token.string[0] == 'L')
 		{
 			current_facing = k_left_facing[current_facing];
-			std::cout << "Turning Left" << std::endl;
-
 		}
 		else if (current_token.string[0] == 'R')
 		{
 			current_facing = k_right_facing[current_facing];
-			std::cout << "Turning Right" << std::endl;
 		}
 		else
 		{
@@ -161,35 +183,46 @@ void execute_2016_day1_part2(FILE* file)
 		distance_view.string++;
 
 		uint32 distance = static_cast<uint32>(c_string_utilities::to_unsigned_integer(distance_view));
-
-		std::cout << "Going distance " << distance << std::endl;
+		int32 mod_x = 0;
+		int32 mod_y = 0;
 
 		switch (current_facing)
 		{
 		case _facing_direction_north:
-			current_y += distance;
+			mod_y = 1;
 			break;
 		case _facing_direction_south:
-			current_y -= distance;
+			mod_y = -1;
 			break;
 		case _facing_direction_east:
-			current_x += distance;
+			mod_x = 1;
 			break;
 		case _facing_direction_west:
-			current_x -= distance;
+			mod_x = -1;
 			break;
 		default:
 			haltv("Unaccounted for facing");
 		}
 
-		grid->test_area();
+		for (int32 offset = 1; offset <= distance; offset++)
+		{
+			s_point current_point(start_x + mod_x * offset, start_y + mod_y * offset);
+			if (traveled_set.contains(current_point))
+			{
+				target_point = current_point;
+				target_found = true;
+				break;
+			}
+			else
+			{
+				traveled_set.add(current_point);
+			}
+		}
 
-		start_x = current_x;
-		start_y = current_y;
+		start_x += mod_x * distance;
+		start_y += mod_y * distance;
 	}
-	while (direction_tokens.advance());
+	while (!target_found && direction_tokens.advance());
 
-	std::cout << "Start position is " << int_abs(x) + int_abs(y) << " blocks away from Easter Bunny HQ" << std::endl;
-#endif // 0
-	std::cout << "Part 2 disabled" << std::endl;
+	std::cout << "First location visited twice is " << int_abs(target_point.x) + int_abs(target_point.y) << " blocks from the starting location" << std::endl;
 }
