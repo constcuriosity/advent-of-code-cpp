@@ -6,7 +6,7 @@
 #include "foundation/containers/static/static_bit_grid.h"
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_grid.h"
-#include "foundation/math/int_math.h"
+#include "foundation/math/basic_math.h"
 #include "foundation/utilities/string_utilities.h"
 
 #include <iostream>
@@ -126,7 +126,7 @@ void execute_2015_day6_part2(FILE* file)
 			light_change.end_y,
 			[&](int32 value, uint32 x, uint32 y)
 			{
-				grid->set_value(x, y, int_max(value + light_offset, 0));
+				grid->set_value(x, y, n_math::max(value + light_offset, 0));
 			});
 	}
 

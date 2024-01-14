@@ -5,7 +5,7 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_array.h"
-#include "foundation/math/int_math.h"
+#include "foundation/math/basic_math.h"
 
 #include <iostream>
 
@@ -139,15 +139,15 @@ void execute_2023_day2_part2(FILE* file)
 				{
 					if (c_string_utilities::equals(cube_info.string, "red", cube_info.length))
 					{
-						red_max = int_max(cube_amount, red_max);
+						red_max = n_math::max(cube_amount, red_max);
 					}
 					else if (c_string_utilities::equals(cube_info.string, "green", cube_info.length))
 					{
-						green_max = int_max(cube_amount, green_max);
+						green_max = n_math::max(cube_amount, green_max);
 					}
 					else if (c_string_utilities::equals(cube_info.string, "blue", cube_info.length))
 					{
-						blue_max = int_max(cube_amount, blue_max);
+						blue_max = n_math::max(cube_amount, blue_max);
 					}
 				}
 

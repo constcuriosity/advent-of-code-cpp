@@ -4,7 +4,7 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/dynamic/dynamic_set.h"
-#include "foundation/math/int_math.h"
+#include "foundation/math/basic_math.h"
 #include "foundation/utilities/sort.h"
 #include "foundation/utilities/wyhash.h"
 

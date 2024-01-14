@@ -7,7 +7,7 @@
 #include "foundation/containers/static/static_array.h"
 #include "foundation/containers/static/static_set.h"
 #include "foundation/containers/static/static_string.h"
-#include "foundation/math/int_math.h"
+#include "foundation/math/basic_math.h"
 
 #include <iostream>
 
@@ -186,7 +186,7 @@ void execute_2023_day5_part1(FILE* file)
 
 	for (int32 seed_index = 0; seed_index < seed_vector.get_size(); seed_index++)
 	{
-		lowest_location = int_min(lowest_location, seed_vector[seed_index]);
+		lowest_location = n_math::min(lowest_location, seed_vector[seed_index]);
 	}
 
 	std::cout << "The lowest location after all those locations is: " << lowest_location << std::endl;
@@ -408,7 +408,7 @@ void execute_2023_day5_part2(FILE* file)
 
 	for (int32 seed_index = 0; seed_index < seed_vector.get_size(); seed_index++)
 	{
-		lowest_location = int_min(lowest_location, seed_vector[seed_index].start);
+		lowest_location = n_math::min(lowest_location, seed_vector[seed_index].start);
 	}
 
 	std::cout << "The lowest location after all those locations is: " << lowest_location << std::endl;

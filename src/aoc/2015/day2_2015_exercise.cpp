@@ -3,7 +3,7 @@
 
 #include "aoc/infrastructure/exercise.h"
 
-#include "foundation/math/int_math.h"
+#include "foundation/math/basic_math.h"
 
 #include <iostream>
 
@@ -40,7 +40,7 @@ void execute_2015_day2_part1(FILE* file)
 		int32 side_wh = current_width * current_height;
 
 		int32 area = (2 * side_lw) + (2 * side_lh) + (2 * side_wh);
-		int32 smallest_side = int_min(side_lw, int_min(side_lh, side_wh));
+		int32 smallest_side = n_math::min(side_lw, n_math::min(side_lh, side_wh));
 
 		total_sqft += area + smallest_side;
 	}
@@ -59,7 +59,7 @@ void execute_2015_day2_part2(FILE* file)
 		fscanf(file, "%dx%dx%d", &current_length, &current_width, &current_height) != EOF)
 	{
 		int32 perimeter = current_length + current_width + current_height;
-		perimeter -= int_max(current_length, int_max(current_width, current_height));
+		perimeter -= n_math::max(current_length, n_math::max(current_width, current_height));
 		perimeter *= 2;
 
 		int32 volume = current_length * current_width * current_height;

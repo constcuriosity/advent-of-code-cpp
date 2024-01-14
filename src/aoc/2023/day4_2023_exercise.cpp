@@ -6,7 +6,7 @@
 #include "foundation/containers/static/static_array.h"
 #include "foundation/containers/static/static_set.h"
 #include "foundation/containers/static/static_string.h"
-#include "foundation/math/int_math.h"
+#include "foundation/math/basic_math.h"
 
 #include <iostream>
 
@@ -76,7 +76,7 @@ void execute_2023_day4_part1(FILE* file)
 			}
 		}
 
-		int32 points = winning_matches > 0 ? static_cast<int32>(int_pow_two(winning_matches - 1)) : 0;
+		int32 points = winning_matches > 0 ? static_cast<int32>(n_math::int_pow_two(winning_matches - 1)) : 0;
 
 		total_points += points;
 	}

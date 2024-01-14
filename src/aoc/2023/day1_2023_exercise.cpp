@@ -5,7 +5,7 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_array.h"
-#include "foundation/math/int_math.h"
+#include "foundation/math/basic_math.h"
 
 #include <iostream>
 
