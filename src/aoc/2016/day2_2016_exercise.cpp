@@ -135,7 +135,7 @@ void execute_2016_day2_part2(FILE* file)
 	keypad.set_value(4, 4, 'x');
 
 	c_small_string keypad_code;
-	s_point2b current_coord(1, 1);
+	s_point2b current_coord(0, 2);
 
 	c_kilo_string line_buffer;
 	while (feof(file) == 0)
