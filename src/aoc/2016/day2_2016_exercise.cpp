@@ -14,19 +14,6 @@
 
 //-------------- prototypes
 
-template <typename T>
-s_point2<T> operator+(const s_point2<T>& p0, const s_vector2 &v0)
-{
-	return s_point2<T>(p0.x + v0.x, p0.y + v0.y);
-}
-
-template <typename T>
-s_point2<T> operator+(const s_vector2& v0, const s_point2<T>& p0)
-{
-	return s_point2<T>(v0.x + p0.x, v0.y + p0.y);
-}
-
-
 void execute_2016_day2_part1(FILE* file);
 void execute_2016_day2_part2(FILE* file);
 
