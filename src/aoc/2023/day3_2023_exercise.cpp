@@ -50,7 +50,7 @@ void execute_2023_day3_part1(FILE* file)
 		{
 			char current_char = schematic->get_value(column_index, row_index);
 
-			if (c_string_utilities::is_digit(current_char))
+			if (n_string::is_digit(current_char))
 			{
 				recording_number = true;
 				number_string.append_char(current_char);
@@ -65,7 +65,7 @@ void execute_2023_day3_part1(FILE* file)
 						if (schematic->is_valid_coord(neighbor_column, neighbor_row))
 						{
 							char neighbor_char = schematic->get_value(neighbor_column, neighbor_row);
-							current_number_valid_part = neighbor_char != '.' && !c_string_utilities::is_digit(neighbor_char);
+							current_number_valid_part = neighbor_char != '.' && !n_string::is_digit(neighbor_char);
 						}
 					}
 				}
@@ -74,7 +74,7 @@ void execute_2023_day3_part1(FILE* file)
 			{
 				if (recording_number && current_number_valid_part)
 				{
-					uint64 number = c_string_utilities::to_unsigned_integer(number_string.get_string());
+					uint64 number = n_string::to_unsigned_integer(number_string.get_string());
 					part_number_total += number;
 				}
 
@@ -119,7 +119,7 @@ void execute_2023_day3_part2(FILE* file)
 						if (schematic->is_valid_coord(neighbor_column, neighbor_row))
 						{
 							char neighbor_char = schematic->get_value(neighbor_column, neighbor_row);
-							bool char_is_digit = c_string_utilities::is_digit(neighbor_char);
+							bool char_is_digit = n_string::is_digit(neighbor_char);
 
 							if (char_is_digit && !just_recorded_number)
 							{
@@ -194,24 +194,24 @@ uint64 capture_number_at_coord(
 {
 	uint32 current_column_index = column_index;
 
-	assert(c_string_utilities::is_digit(schematic->get_value(current_column_index, row_index)));
+	assert(n_string::is_digit(schematic->get_value(current_column_index, row_index)));
 
 	while (schematic->is_valid_coord(current_column_index - 1, row_index) &&
-		c_string_utilities::is_digit(schematic->get_value(current_column_index - 1, row_index)))
+		n_string::is_digit(schematic->get_value(current_column_index - 1, row_index)))
 	{
 		current_column_index--;
 	}
 
-	assert(c_string_utilities::is_digit(schematic->get_value(current_column_index, row_index)));
+	assert(n_string::is_digit(schematic->get_value(current_column_index, row_index)));
 
 	c_small_string number_string;
 
 	while (schematic->is_valid_coord(current_column_index, row_index) &&
-		c_string_utilities::is_digit(schematic->get_value(current_column_index, row_index)))
+		n_string::is_digit(schematic->get_value(current_column_index, row_index)))
 	{
 		number_string.append_char(schematic->get_value(current_column_index, row_index));
 		current_column_index++;
 	}
 
-	return c_string_utilities::to_unsigned_integer(number_string.get_string());
+	return n_string::to_unsigned_integer(number_string.get_string());
 }

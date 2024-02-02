@@ -47,9 +47,9 @@ void execute_2023_day1_part1(FILE* file)
 		for (uint32 char_index = 0; char_index < length; char_index++)
 		{
 			char current_character= line_buffer.at(char_index);
-			if (c_string_utilities::is_digit(current_character))
+			if (n_string::is_digit(current_character))
 			{
-				first_digit = c_string_utilities::to_digit(current_character);
+				first_digit = n_string::to_digit(current_character);
 				break;
 			}
 		}
@@ -57,9 +57,9 @@ void execute_2023_day1_part1(FILE* file)
 		for (int32 char_index = length - 1; char_index >= 0; char_index--)
 		{
 			char current_character = line_buffer.at(char_index);
-			if (c_string_utilities::is_digit(current_character))
+			if (n_string::is_digit(current_character))
 			{
-				second_digit = c_string_utilities::to_digit(current_character);
+				second_digit = n_string::to_digit(current_character);
 				break;
 			}
 		}
@@ -102,7 +102,7 @@ void execute_2023_day1_part2(FILE* file)
 	for (int32 key_index = 0; key_index < 20; key_index++)
 	{
 		key_views[key_index].string = k_keys[key_index];
-		key_views[key_index].length = c_string_utilities::length(k_keys[key_index]);
+		key_views[key_index].length = n_string::length(k_keys[key_index]);
 	}
 
 	int32 total = 0;
@@ -111,8 +111,8 @@ void execute_2023_day1_part2(FILE* file)
 	{
 		fgets(line_buffer.get_string(), c_medium_string::k_capacity, file);
 
-		s_string_view first_key_view = c_string_utilities::find_first_key(line_buffer.get_string(), key_views.view());
-		s_string_view second_key_view = c_string_utilities::find_last_key(line_buffer.get_string(), key_views.view());
+		s_string_view first_key_view = n_string::find_first_key(line_buffer.get_string(), key_views.view());
+		s_string_view second_key_view = n_string::find_last_key(line_buffer.get_string(), key_views.view());
 		uint32 first_digit = key_views.index_of(first_key_view) % 10;
 		uint32 second_digit = key_views.index_of(second_key_view) % 10;
 

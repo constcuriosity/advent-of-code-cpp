@@ -50,7 +50,7 @@ void execute_2016_day4_part1(FILE* file)
 
 		if (is_room_real(room_name_view, checksum_view))
 		{
-			uint64 sector_id = c_string_utilities::to_unsigned_integer(sector_id_view);
+			uint64 sector_id = n_string::to_unsigned_integer(sector_id_view);
 
 			sector_id_sum += sector_id;
 		}
@@ -78,10 +78,10 @@ void execute_2016_day4_part2(FILE* file)
 
 		if (is_room_real(room_name_view, checksum_view))
 		{
-			uint64 sector_id = c_string_utilities::to_unsigned_integer(sector_id_view);
+			uint64 sector_id = n_string::to_unsigned_integer(sector_id_view);
 			c_small_string decrypted_name = decrypt_room_name(room_name_view, sector_id);
 
-			if (c_string_utilities::index_of(decrypted_name.get_string(), "object") != NONE)
+			if (n_string::index_of(decrypted_name.get_string(), "object") != NONE)
 			{
 				target_room_name.set(decrypted_name.get_string());
 				north_pole_sector_id = sector_id;

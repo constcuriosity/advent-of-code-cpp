@@ -120,7 +120,7 @@ void execute_2016_day1_part1(FILE* file)
 		 s_string_view distance_view = current_token;
 		 distance_view.string++;
 
-		 uint32 distance = static_cast<uint32>(c_string_utilities::to_unsigned_integer(distance_view));
+		 uint32 distance = static_cast<uint32>(n_string::to_unsigned_integer(distance_view));
 
 		 switch (current_facing)
 		 {
@@ -182,7 +182,7 @@ void execute_2016_day1_part2(FILE* file)
 		s_string_view distance_view = current_token;
 		distance_view.string++;
 
-		uint32 distance = static_cast<uint32>(c_string_utilities::to_unsigned_integer(distance_view));
+		uint32 distance = static_cast<uint32>(n_string::to_unsigned_integer(distance_view));
 		int32 mod_x = 0;
 		int32 mod_y = 0;
 

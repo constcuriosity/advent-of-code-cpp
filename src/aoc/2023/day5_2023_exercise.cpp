@@ -106,7 +106,7 @@ void execute_2023_day5_part1(FILE* file)
 
 	do
 	{
-		uint64 seed = c_string_utilities::to_unsigned_integer(seed_tokenizer.get_token().string, seed_tokenizer.get_token().length);
+		uint64 seed = n_string::to_unsigned_integer(seed_tokenizer.get_token().string, seed_tokenizer.get_token().length);
 		seed_vector.push(seed);
 	} while (seed_tokenizer.advance());
 
@@ -129,7 +129,7 @@ void execute_2023_day5_part1(FILE* file)
 
 			do
 			{
-				uint64 value = c_string_utilities::to_unsigned_integer(map_tokenizer.get_token().string, map_tokenizer.get_token().length);
+				uint64 value = n_string::to_unsigned_integer(map_tokenizer.get_token().string, map_tokenizer.get_token().length);
 				range.values[value_index] = value;
 				value_index++;
 
@@ -205,9 +205,9 @@ void execute_2023_day5_part2(FILE* file)
 
 	do
 	{
-		uint64 seed_start = c_string_utilities::to_unsigned_integer(seed_tokenizer.get_token().string, seed_tokenizer.get_token().length);
+		uint64 seed_start = n_string::to_unsigned_integer(seed_tokenizer.get_token().string, seed_tokenizer.get_token().length);
 		seed_tokenizer.advance();
-		uint64 seed_length = c_string_utilities::to_unsigned_integer(seed_tokenizer.get_token().string, seed_tokenizer.get_token().length);
+		uint64 seed_length = n_string::to_unsigned_integer(seed_tokenizer.get_token().string, seed_tokenizer.get_token().length);
 
 		s_seed_range range;
 		range.start = seed_start;
@@ -235,7 +235,7 @@ void execute_2023_day5_part2(FILE* file)
 
 			do
 			{
-				uint64 value = c_string_utilities::to_unsigned_integer(map_tokenizer.get_token().string, map_tokenizer.get_token().length);
+				uint64 value = n_string::to_unsigned_integer(map_tokenizer.get_token().string, map_tokenizer.get_token().length);
 				range.values[value_index] = value;
 				value_index++;
 

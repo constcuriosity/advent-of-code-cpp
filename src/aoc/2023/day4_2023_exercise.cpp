@@ -48,7 +48,7 @@ void execute_2023_day4_part1(FILE* file)
 
 		for (int32 winning_number_index = 0; winning_number_index < winning_numbers.get_capacity(); winning_number_index++)
 		{
-			uint64 number = c_string_utilities::to_unsigned_integer(line_tokens.get_token().string, line_tokens.get_token().length);
+			uint64 number = n_string::to_unsigned_integer(line_tokens.get_token().string, line_tokens.get_token().length);
 			winning_numbers.add(static_cast<uint8>(number));
 			line_tokens.advance();
 		}
@@ -57,7 +57,7 @@ void execute_2023_day4_part1(FILE* file)
 
 		for (int32 owned_number_index = 0; owned_number_index < owned_numbers.get_capacity(); owned_number_index++)
 		{
-			uint64 number = c_string_utilities::to_unsigned_integer(line_tokens.get_token().string, line_tokens.get_token().length);
+			uint64 number = n_string::to_unsigned_integer(line_tokens.get_token().string, line_tokens.get_token().length);
 			owned_numbers.add(static_cast<uint8>(number));
 			line_tokens.advance();
 		}
@@ -106,7 +106,7 @@ void execute_2023_day4_part2(FILE* file)
 
 		for (int32 winning_number_index = 0; winning_number_index < winning_numbers.get_capacity(); winning_number_index++)
 		{
-			uint64 number = c_string_utilities::to_unsigned_integer(line_tokens.get_token().string, line_tokens.get_token().length);
+			uint64 number = n_string::to_unsigned_integer(line_tokens.get_token().string, line_tokens.get_token().length);
 			winning_numbers.add(static_cast<uint8>(number));
 			line_tokens.advance();
 		}
@@ -115,7 +115,7 @@ void execute_2023_day4_part2(FILE* file)
 
 		for (int32 owned_number_index = 0; owned_number_index < owned_numbers.get_capacity(); owned_number_index++)
 		{
-			uint64 number = c_string_utilities::to_unsigned_integer(line_tokens.get_token().string, line_tokens.get_token().length);
+			uint64 number = n_string::to_unsigned_integer(line_tokens.get_token().string, line_tokens.get_token().length);
 			owned_numbers.add(static_cast<uint8>(number));
 			line_tokens.advance();
 		}

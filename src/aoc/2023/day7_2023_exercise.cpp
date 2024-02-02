@@ -170,7 +170,7 @@ void execute_2023_day7_part1(FILE* file)
 		
 		hand_tokenizer.advance();
 
-		uint64 bid = c_string_utilities::to_unsigned_integer(hand_tokenizer.get_token());
+		uint64 bid = n_string::to_unsigned_integer(hand_tokenizer.get_token());
 		hand.bid = static_cast<uint32>(bid);
 
 		hands_vector.push(hand);
@@ -219,7 +219,7 @@ void execute_2023_day7_part2(FILE* file)
 
 		hand_tokenizer.advance();
 
-		uint64 bid = c_string_utilities::to_unsigned_integer(hand_tokenizer.get_token());
+		uint64 bid = n_string::to_unsigned_integer(hand_tokenizer.get_token());
 		hand.bid = static_cast<uint32>(bid);
 
 		hands_vector.push(hand);

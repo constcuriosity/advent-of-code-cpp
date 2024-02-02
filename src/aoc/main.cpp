@@ -31,12 +31,12 @@ int main(int argc, const char *argv[])
 
 	if (argc >= 2)
 	{
-		inputted_year = static_cast<int32>(c_string_utilities::to_integer(argv[1]));
+		inputted_year = static_cast<int32>(n_string::to_integer(argv[1]));
 	}
 
 	if (argc >= 3)
 	{
-		inputted_day = static_cast<int32>(c_string_utilities::to_integer(argv[2]));
+		inputted_day = static_cast<int32>(n_string::to_integer(argv[2]));
 	}
 
 	c_aoc_machine machine;

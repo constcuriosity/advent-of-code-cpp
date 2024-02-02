@@ -49,7 +49,7 @@ void execute_2023_day6_part1(FILE* file)
 
 	do
 	{
-		int32 time = static_cast<int32>(c_string_utilities::to_integer(time_tokens.get_token()));
+		int32 time = static_cast<int32>(n_string::to_integer(time_tokens.get_token()));
 		times.push(time);
 	}
 	while (time_tokens.advance());
@@ -63,7 +63,7 @@ void execute_2023_day6_part1(FILE* file)
 
 	do
 	{
-		int32 distance = static_cast<int32>(c_string_utilities::to_integer(distance_tokens.get_token()));
+		int32 distance = static_cast<int32>(n_string::to_integer(distance_tokens.get_token()));
 		distances.push(distance);
 	}
 	while (distance_tokens.advance());
@@ -113,7 +113,7 @@ void execute_2023_day6_part2(FILE* file)
 		number_buffer.append(time_tokens.get_token().string, time_tokens.get_token().length);
 	} while (time_tokens.advance());
 
-	int64 total_time = c_string_utilities::to_integer(number_buffer.get_string());
+	int64 total_time = n_string::to_integer(number_buffer.get_string());
 	number_buffer.clear();
 
 	fgets(line_buffer.get_string(), c_medium_string::k_capacity, file);
@@ -126,7 +126,7 @@ void execute_2023_day6_part2(FILE* file)
 		number_buffer.append(distance_tokens.get_token().string, distance_tokens.get_token().length);
 	} while (distance_tokens.advance());
 
-	int64 best_distance = c_string_utilities::to_integer(number_buffer.get_string());
+	int64 best_distance = n_string::to_integer(number_buffer.get_string());
 	number_buffer.clear();
 
 

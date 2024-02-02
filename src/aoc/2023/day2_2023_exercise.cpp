@@ -43,9 +43,9 @@ void execute_2023_day2_part1(FILE* file)
 
 		const char* line= line_buffer.get_string();
 		line += 5; // Increment to get past "Game "
-		int32 colon_index = c_string_utilities::index_of(line, ":");
+		int32 colon_index = n_string::index_of(line, ":");
 
-		uint64 game_id = c_string_utilities::to_unsigned_integer(line, colon_index);
+		uint64 game_id = n_string::to_unsigned_integer(line, colon_index);
 
 		line += colon_index + 2; // Move past the game id and the ": "
 
@@ -65,19 +65,19 @@ void execute_2023_day2_part1(FILE* file)
 
 				if (reading_number)
 				{
-					cube_amount = c_string_utilities::to_unsigned_integer(cube_info.string, cube_info.length);
+					cube_amount = n_string::to_unsigned_integer(cube_info.string, cube_info.length);
 				}
 				else
 				{
-					if (c_string_utilities::equals(cube_info.string, "red", cube_info.length))
+					if (n_string::equals(cube_info.string, "red", cube_info.length))
 					{
 						game_viable = cube_amount <= 12;
 					}
-					else if (c_string_utilities::equals(cube_info.string, "green", cube_info.length))
+					else if (n_string::equals(cube_info.string, "green", cube_info.length))
 					{
 						game_viable = cube_amount <= 13;
 					}
-					else if (c_string_utilities::equals(cube_info.string, "blue", cube_info.length))
+					else if (n_string::equals(cube_info.string, "blue", cube_info.length))
 					{
 						game_viable = cube_amount <= 14;
 					}
@@ -110,7 +110,7 @@ void execute_2023_day2_part2(FILE* file)
 
 		const char* line = line_buffer.get_string();
 
-		int32 colon_index = c_string_utilities::index_of(line, ":");
+		int32 colon_index = n_string::index_of(line, ":");
 		line += colon_index + 2; // Move past the game id and the ": "
 
 		uint64 red_max = 0;
@@ -133,19 +133,19 @@ void execute_2023_day2_part2(FILE* file)
 
 				if (reading_number)
 				{
-					cube_amount = c_string_utilities::to_unsigned_integer(cube_info.string, cube_info.length);
+					cube_amount = n_string::to_unsigned_integer(cube_info.string, cube_info.length);
 				}
 				else
 				{
-					if (c_string_utilities::equals(cube_info.string, "red", cube_info.length))
+					if (n_string::equals(cube_info.string, "red", cube_info.length))
 					{
 						red_max = n_math::max(cube_amount, red_max);
 					}
-					else if (c_string_utilities::equals(cube_info.string, "green", cube_info.length))
+					else if (n_string::equals(cube_info.string, "green", cube_info.length))
 					{
 						green_max = n_math::max(cube_amount, green_max);
 					}
-					else if (c_string_utilities::equals(cube_info.string, "blue", cube_info.length))
+					else if (n_string::equals(cube_info.string, "blue", cube_info.length))
 					{
 						blue_max = n_math::max(cube_amount, blue_max);
 					}

@@ -153,16 +153,16 @@ static_function void parse_light_change(const c_medium_string& line, s_light_cha
 	s_string_view current_token = line_tokens.get_token();
 
 	// Figure out what we're doing with the grid
-	if (c_string_utilities::equals(current_token.string, "turn", current_token.length))
+	if (n_string::equals(current_token.string, "turn", current_token.length))
 	{
 		line_tokens.advance();
 		current_token = line_tokens.get_token();
-		if (c_string_utilities::equals(current_token.string, "off", current_token.length))
+		if (n_string::equals(current_token.string, "off", current_token.length))
 		{
 			light_operation = e_light_operation::off;
 		}
 	}
-	else if (c_string_utilities::equals(current_token.string, "toggle", current_token.length))
+	else if (n_string::equals(current_token.string, "toggle", current_token.length))
 	{
 		light_operation = e_light_operation::toggle;
 	}
@@ -170,21 +170,21 @@ static_function void parse_light_change(const c_medium_string& line, s_light_cha
 	// Get the coordinates
 	line_tokens.advance();
 	current_token = line_tokens.get_token();
-	int64 start_x = c_string_utilities::to_integer(current_token.string, current_token.length);
+	int64 start_x = n_string::to_integer(current_token.string, current_token.length);
 
 	line_tokens.advance();
 	current_token = line_tokens.get_token();
-	int64 start_y = c_string_utilities::to_integer(current_token.string, current_token.length);
+	int64 start_y = n_string::to_integer(current_token.string, current_token.length);
 
 	line_tokens.advance();
 
 	line_tokens.advance();
 	current_token = line_tokens.get_token();
-	int64 end_x = c_string_utilities::to_integer(current_token.string, current_token.length);
+	int64 end_x = n_string::to_integer(current_token.string, current_token.length);
 
 	line_tokens.advance();
 	current_token = line_tokens.get_token();
-	int64 end_y = c_string_utilities::to_integer(current_token.string, current_token.length);
+	int64 end_y = n_string::to_integer(current_token.string, current_token.length);
 
 	out_change->operation = light_operation;
 	out_change->start_x = static_cast<uint32>(start_x);
