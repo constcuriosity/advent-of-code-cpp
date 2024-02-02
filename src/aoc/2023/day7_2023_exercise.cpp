@@ -242,8 +242,8 @@ void execute_2023_day7_part2(FILE* file)
 e_card_value get_card_value_for_char(char value, e_j_mode mode)
 {
 	int32 card_index = (value == 'J' && mode == _j_mode_joker)
-		? n_array_utilities::index_of(k_card_value_lookup, ARRAY_SIZE(k_card_value_lookup), value)
-		: n_array_utilities::last_index_of(k_card_value_lookup, ARRAY_SIZE(k_card_value_lookup), value);
+		? n_array::index_of(k_card_value_lookup, ARRAY_SIZE(k_card_value_lookup), value)
+		: n_array::last_index_of(k_card_value_lookup, ARRAY_SIZE(k_card_value_lookup), value);
 
 	return card_index != NONE ? static_cast<e_card_value>(card_index) : k_card_value_count;
 }

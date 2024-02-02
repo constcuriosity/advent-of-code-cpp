@@ -41,8 +41,8 @@ void execute_2016_day4_part1(FILE* file)
 	{
 		fgets(line_buffer.get_string(), line_buffer.k_capacity, file);
 
-		int32 last_hyphen_index = n_array_utilities::last_index_of(line_buffer.get_string(), line_buffer.length(), '-');
-		int32 first_bracket_index = n_array_utilities::last_index_of(line_buffer.get_string(), line_buffer.length(), '[');
+		int32 last_hyphen_index = n_array::last_index_of(line_buffer.get_string(), line_buffer.length(), '-');
+		int32 first_bracket_index = n_array::last_index_of(line_buffer.get_string(), line_buffer.length(), '[');
 
 		s_string_view room_name_view(line_buffer.get_string(), last_hyphen_index);
 		s_string_view sector_id_view(line_buffer.get_string() + last_hyphen_index + 1, first_bracket_index - last_hyphen_index + 1);
@@ -69,8 +69,8 @@ void execute_2016_day4_part2(FILE* file)
 	{
 		fgets(line_buffer.get_string(), line_buffer.k_capacity, file);
 
-		int32 last_hyphen_index = n_array_utilities::last_index_of(line_buffer.get_string(), line_buffer.length(), '-');
-		int32 first_bracket_index = n_array_utilities::last_index_of(line_buffer.get_string(), line_buffer.length(), '[');
+		int32 last_hyphen_index = n_array::last_index_of(line_buffer.get_string(), line_buffer.length(), '-');
+		int32 first_bracket_index = n_array::last_index_of(line_buffer.get_string(), line_buffer.length(), '[');
 
 		s_string_view room_name_view(line_buffer.get_string(), last_hyphen_index);
 		s_string_view sector_id_view(line_buffer.get_string() + last_hyphen_index + 1, first_bracket_index - last_hyphen_index + 1);
