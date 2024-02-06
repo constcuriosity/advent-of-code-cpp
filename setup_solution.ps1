@@ -29,7 +29,7 @@ else
     }
     else
     {
-        Start-Process -FilePath $app -ArgumentList "/sources(@`"sharpmake\main.sharpmake.cs`") /debug /generateDebugSolution"
+        Start-Process -FilePath $app -ArgumentList "/sources(@'sharpmake\main.sharpmake.cs') /debug /generateDebugSolution"
 
         Write-Host "Generating projects and solutions..."
         Timeout /T 10

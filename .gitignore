@@ -295,3 +295,6 @@ $RECYCLE.BIN/
 /sharpmake/Properties
 /Build
 /temp
+
+# Remove weird Sharpmake artifact
+*.bin
