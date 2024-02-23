@@ -45,9 +45,9 @@ void execute_2016_day5_part1(FILE* file)
 
 		s_md5_digest hash_digest = c_md5_hash::hash(combo.get_string());
 
-		if (hash_digest.digest[0] == 0 &&
-			hash_digest.digest[1] == 0 &&
-			hash_digest.digest[2] < 16)
+		if (hash_digest.digest[0] == 0x00 &&
+			hash_digest.digest[1] == 0x00 &&
+			hash_digest.digest[2] <= 0x0F)
 		{
 			uint32 remainder = hash_digest.digest[2];
 			if (remainder < 10)
@@ -80,8 +80,8 @@ void execute_2016_day5_part2(FILE* file)
 
 		s_md5_digest hash_digest = c_md5_hash::hash(combo.get_string());
 
-		if (hash_digest.digest[0] == 0 &&
-			hash_digest.digest[1] == 0 &&
+		if (hash_digest.digest[0] == 0x00 &&
+			hash_digest.digest[1] == 0x00 &&
 			hash_digest.digest[2] < k_password_length &&
 			password[hash_digest.digest[2]] == '\0')
 		{
