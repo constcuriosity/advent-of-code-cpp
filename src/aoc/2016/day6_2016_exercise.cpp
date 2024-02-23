@@ -25,7 +25,7 @@ extern const s_aoc_exercise_data k_2016_day6_exercise
 {
 	2016,
 	6,
-	"How About a Nice Game of Chess?",
+	"Signals and Noise",
 	execute_2016_day6_part1,
 	execute_2016_day6_part2
 };
