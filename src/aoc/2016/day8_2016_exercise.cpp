@@ -80,13 +80,13 @@ void execute_2016_day8_part1(FILE* file)
 			tokens.advance();
 			s_string_view index_view = tokens.get_token();
 
-			uint64 data_index = n_string::to_unsigned_integer(index_view.string + 2, index_view.length - 2);
+			uint32 data_index = static_cast<uint32>(n_string::to_unsigned_integer(index_view.string + 2, index_view.length - 2));
 
 			tokens.advance(); // by
 			tokens.advance();
 			s_string_view amount_view = tokens.get_token();
 
-			uint64 rotate_amount = n_string::to_unsigned_integer(amount_view);
+			uint32 rotate_amount = static_cast<uint32>(n_string::to_unsigned_integer(amount_view));
 
 			if (rotating_column)
 			{

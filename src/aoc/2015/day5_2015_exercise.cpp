@@ -70,7 +70,7 @@ static_function bool is_nice_string_v1(const c_small_string& string)
 	bool has_letter_chain = false;
 	bool has_banned_sequence = false;
 
-	uint32 line_length = string.length();
+	int32 line_length = string.length();
 	for (int32 char_index = 0; char_index < line_length && !has_banned_sequence; char_index++)
 	{
 		char current_char = string.at(char_index);
@@ -87,13 +87,10 @@ static_function bool is_nice_string_v1(const c_small_string& string)
 
 static_function bool is_nice_string_v2(const c_small_string& string)
 {
-	char first_char = '\0';
-	char second_char = '\0';
-
 	bool character_mirrored = false;
 	bool pair_found = false;
 
-	uint32 line_length = string.length();
+	int32 line_length = string.length();
 	for (int32 char_index = 0; char_index < line_length; char_index++)
 	{
 		if (char_index >= 2)

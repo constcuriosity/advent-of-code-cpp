@@ -49,7 +49,7 @@ void execute_2016_day6_part1(FILE* file)
 			uint32 char_count = message_grid.get_value(message_char_index, alphabet_index);
 			if (char_count > most_common_count)
 			{
-				most_common_character = 'a' + alphabet_index;
+				most_common_character = 'a' + static_cast<char>(alphabet_index);
 				most_common_count = char_count;
 			}
 		}
@@ -77,7 +77,7 @@ void execute_2016_day6_part2(FILE* file)
 			uint32 char_count = message_grid.get_value(message_char_index, alphabet_index);
 			if (char_count < least_common_count)
 			{
-				least_common_character = 'a' + alphabet_index;
+				least_common_character = 'a' + static_cast<char>(alphabet_index);
 				least_common_count = char_count;
 			}
 		}

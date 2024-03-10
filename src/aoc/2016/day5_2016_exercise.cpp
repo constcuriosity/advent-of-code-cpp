@@ -52,11 +52,11 @@ void execute_2016_day5_part1(FILE* file)
 			uint32 remainder = hash_digest.digest[2];
 			if (remainder < 10)
 			{
-				password.append_char('0' + remainder);
+				password.append_char('0' + static_cast<char>(remainder));
 			}
 			else
 			{
-				password.append_char('a' + (remainder - 10));
+				password.append_char('a' + (static_cast<char>(remainder) - 10));
 			}
 		}
 	}
@@ -85,16 +85,14 @@ void execute_2016_day5_part2(FILE* file)
 			hash_digest.digest[2] < k_password_length &&
 			password[hash_digest.digest[2]] == '\0')
 		{
-			int32 password_index = hash_digest.digest[2];
-
 			uint32 remainder = hash_digest.digest[3] >> 4;
 			if (remainder < 10)
 			{
-				password[hash_digest.digest[2]] = '0' + remainder;
+				password[hash_digest.digest[2]] = '0' + static_cast<char>(remainder);
 			}
 			else
 			{
-				password[hash_digest.digest[2]] = 'a' + (remainder - 10);
+				password[hash_digest.digest[2]] = 'a' + (static_cast<char>(remainder) - 10);
 			}
 
 			bool password_filled = true;

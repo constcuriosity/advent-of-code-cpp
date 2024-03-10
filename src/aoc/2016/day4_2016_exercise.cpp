@@ -106,7 +106,7 @@ bool is_room_real(const s_string_view& name, const s_string_view& checksum)
 	c_static_array<s_letter_count, 26> counts;
 	for (int32 letter_index = 0; letter_index < counts.get_size(); letter_index++)
 	{
-		counts[letter_index].letter = 'a' + letter_index;
+		counts[letter_index].letter = 'a' + static_cast<char>(letter_index);
 	}
 
 	for (int32 name_char_index = 0; name_char_index < name.length; name_char_index++)

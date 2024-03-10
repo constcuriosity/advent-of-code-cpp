@@ -233,10 +233,6 @@ bool ids_end_with_z(c_array_view<int32> ids)
 		{
 			result = false;
 		}
-		else
-		{
-			while (0) { void; }
-		}
 	}
 
 	return result;

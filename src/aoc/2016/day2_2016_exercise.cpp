@@ -72,8 +72,6 @@ void execute_2016_day2_part1(FILE* file)
 			case 'R':
 				direction.x = 1;
 				break;
-			default:
-				while (false) { void; }
 			}
 
 			s_point2b new_target = current_coord + direction;
@@ -150,8 +148,6 @@ void execute_2016_day2_part2(FILE* file)
 			case 'R':
 				direction.x = 1;
 				break;
-			default:
-				while (false) { void; }
 			}
 
 			s_point2b new_target = current_coord + direction;
