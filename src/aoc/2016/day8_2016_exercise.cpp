@@ -5,6 +5,7 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_grid.h"
+#include "foundation/containers/view/string_view.h"
 
 #include <iostream>
 
@@ -41,20 +42,20 @@ void execute_2016_day8_part1(FILE* file)
 
 		c_utf8_tokenizer tokens(line_buffer.get_string(), " ");
 
-		s_string_view command_view = tokens.get_token();
+		c_string_view command_view = tokens.get_token();
 
-		if (n_string::equals("rect", command_view.string, command_view.length))
+		if (command_view.equals("rect"))
 		{
 			tokens.advance();
 			s_string_view dimension_view = tokens.get_token();
 
 			c_utf8_tokenizer dimension_tokens(dimension_view.string, "x", dimension_view.length);
-			s_string_view width_view = dimension_tokens.get_token();
+			c_string_view width_view = dimension_tokens.get_token();
 			dimension_tokens.advance();
-			s_string_view height_view = dimension_tokens.get_token();
+			c_string_view height_view = dimension_tokens.get_token();
 
-			uint64 width = n_string::to_unsigned_integer(width_view);
-			uint64 height = n_string::to_unsigned_integer(height_view);
+			uint64 width = width_view.to_unsigned_integer();
+			uint64 height = height_view.to_unsigned_integer();
 
 			// Gotta subtract 1 to convert these to proper indicies
 			screen.for_each(0, 0, static_cast<uint32>(width) - 1, static_cast<uint32>(height) - 1,
@@ -62,17 +63,17 @@ void execute_2016_day8_part1(FILE* file)
 					value = '#';
 				});
 		}
-		else if (n_string::equals("rotate", command_view.string, command_view.length))
+		else if (command_view.equals("rotate"))
 		{
 			tokens.advance();
-			s_string_view direction_view = tokens.get_token();
+			c_string_view direction_view = tokens.get_token();
 			bool rotating_column = false;
 
-			if (n_string::equals("column", direction_view.string, direction_view.length))
+			if (direction_view.equals("column"))
 			{
 				rotating_column = true;
 			}
-			else if (n_string::equals("row", direction_view.string, direction_view.length))
+			else if (direction_view.equals("row"))
 			{
 				rotating_column = false;
 			}
@@ -84,9 +85,9 @@ void execute_2016_day8_part1(FILE* file)
 
 			tokens.advance(); // by
 			tokens.advance();
-			s_string_view amount_view = tokens.get_token();
+			c_string_view amount_view = tokens.get_token();
 
-			uint32 rotate_amount = static_cast<uint32>(n_string::to_unsigned_integer(amount_view));
+			uint32 rotate_amount = static_cast<uint32>(amount_view.to_unsigned_integer());
 
 			if (rotating_column)
 			{
@@ -98,7 +99,6 @@ void execute_2016_day8_part1(FILE* file)
 			}
 		}
 	}
-
 
 	uint32 previous_row = 0;
 	uint32 filled_amount = 0;
