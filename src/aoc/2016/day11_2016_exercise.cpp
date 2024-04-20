@@ -11,7 +11,7 @@
 #include "foundation/utilities/wyhash.h"
 
 #include <iostream>
-#include <unordered_map>
+#include <unordered_set>
 
 //-------------- constants
 
@@ -30,15 +30,17 @@ enum e_item_type
 enum e_element
 {
 	// My input
-	/*_element_promethium,
+	_element_promethium,
 	_element_cobalt,
 	_element_curium,
 	_element_ruthenium,
-	_element_plutonium,*/
+	_element_plutonium,
+	_element_elerium,
+	_element_dilithium,
 
 	// Test input
-	_element_hydrogen,
-	_element_lithium,
+	/*_element_hydrogen,
+	_element_lithium,*/
 
 	k_element
 };
@@ -180,6 +182,8 @@ struct s_step_state
 typedef c_dynamic_set<uint64> c_floor_set;
 typedef c_dynamic_vector<s_step_state> c_state_queue;
 
+static_function int32 move_items(c_state_queue *state_queue);
+
 void execute_2016_day11_part1(FILE* file);
 void execute_2016_day11_part2(FILE* file);
 
@@ -199,14 +203,14 @@ extern const s_aoc_exercise_data k_2016_day11_exercise
 void execute_2016_day11_part1(FILE* file)
 {
 	int32 steps = 0;
-	c_floor_set seen_floor_set;
+	std::unordered_set<uint64> seen_floor_set;
 	c_state_queue state_queue;
 
 	s_building_state starting_state;
 	starting_state.current_floor = 0;
 
 	// My input
-	/*starting_state.floors[0].add({ _item_type_generator, _element_promethium });
+	starting_state.floors[0].add({ _item_type_generator, _element_promethium });
 	starting_state.floors[0].add({ _item_type_microchip, _element_promethium });
 	starting_state.floors[1].add({ _item_type_generator, _element_cobalt });
 	starting_state.floors[1].add({ _item_type_generator, _element_curium });
@@ -215,44 +219,88 @@ void execute_2016_day11_part1(FILE* file)
 	starting_state.floors[2].add({ _item_type_microchip, _element_cobalt });
 	starting_state.floors[2].add({ _item_type_microchip, _element_curium });
 	starting_state.floors[2].add({ _item_type_microchip, _element_ruthenium });
-	starting_state.floors[2].add({ _item_type_microchip, _element_plutonium });*/
+	starting_state.floors[2].add({ _item_type_microchip, _element_plutonium });
 
 	// Test input
-	starting_state.floors[0].add({ _item_type_microchip, _element_hydrogen });
+	/*starting_state.floors[0].add({ _item_type_microchip, _element_hydrogen });
 	starting_state.floors[0].add({ _item_type_microchip, _element_lithium });
 	starting_state.floors[1].add({ _item_type_generator, _element_hydrogen });
-	starting_state.floors[2].add({ _item_type_generator, _element_lithium });
+	starting_state.floors[2].add({ _item_type_generator, _element_lithium });*/
 
 	s_step_state first_step;
 	first_step.state = starting_state;
 	first_step.distance = 0;
 
 	state_queue.push(first_step);
-	seen_floor_set.add(starting_state.to_hash());
 
-	int32 previous_step = 0;
+	steps = move_items(&state_queue);
 
-	while (!state_queue.is_empty())
+	std::cout << "It took " << steps << " to move all of the chips and generators to the top floor" << std::endl;
+}
+
+void execute_2016_day11_part2(FILE* file)
+{
+	int32 steps = 0;
+	std::unordered_set<uint64> seen_floor_set;
+	c_state_queue state_queue;
+
+	s_building_state starting_state;
+	starting_state.current_floor = 0;
+
+	// My input
+	starting_state.floors[0].add({ _item_type_generator, _element_promethium });
+	starting_state.floors[0].add({ _item_type_microchip, _element_promethium });
+	starting_state.floors[0].add({ _item_type_generator, _element_elerium });
+	starting_state.floors[0].add({ _item_type_microchip, _element_elerium });
+	starting_state.floors[0].add({ _item_type_generator, _element_dilithium });
+	starting_state.floors[0].add({ _item_type_microchip, _element_dilithium });
+	starting_state.floors[1].add({ _item_type_generator, _element_cobalt });
+	starting_state.floors[1].add({ _item_type_generator, _element_curium });
+	starting_state.floors[1].add({ _item_type_generator, _element_ruthenium });
+	starting_state.floors[1].add({ _item_type_generator, _element_plutonium });
+	starting_state.floors[2].add({ _item_type_microchip, _element_cobalt });
+	starting_state.floors[2].add({ _item_type_microchip, _element_curium });
+	starting_state.floors[2].add({ _item_type_microchip, _element_ruthenium });
+	starting_state.floors[2].add({ _item_type_microchip, _element_plutonium });
+
+	// Test input
+	/*starting_state.floors[0].add({ _item_type_microchip, _element_hydrogen });
+	starting_state.floors[0].add({ _item_type_microchip, _element_lithium });
+	starting_state.floors[1].add({ _item_type_generator, _element_hydrogen });
+	starting_state.floors[2].add({ _item_type_generator, _element_lithium });*/
+
+	s_step_state first_step;
+	first_step.state = starting_state;
+	first_step.distance = 0;
+
+	state_queue.push(first_step);
+
+	steps = move_items(&state_queue);
+
+	std::cout << "It took " << steps << " to move all of the chips and generators to the top flooor" << std::endl;
+}
+
+static_function int32 move_items(c_state_queue* state_queue)
+{
+	int32 result = 0;
+	std::unordered_set<uint64> seen_floor_set;
+	seen_floor_set.insert(state_queue->at(0).state.to_hash());
+
+	while (!state_queue->is_empty())
 	{
-		const s_step_state current_step = state_queue[0];
-		const s_building_state &current_state = current_step.state;
-		state_queue.erase(0);
+		const s_step_state current_step = state_queue->at(0);
+		const s_building_state& current_state = current_step.state;
+		state_queue->erase(0);
 
-		current_step.print();
+		// current_step.print();
 
 		if (current_state.finished())
 		{
-			steps = current_step.distance;
+			result = current_step.distance;
 			break;
 		}
 
-		if (previous_step != current_step.distance)
-		{
-			previous_step = current_step.distance;
-		}
-
 		// Can take 1 or 2 items and move up/down floors
-		if (current_state.current_floor < k_floor_count - 1)
 		for (int32 floor_mod = -1; floor_mod < 2; floor_mod++)
 		{
 			int32 new_floor = current_state.current_floor + floor_mod;
@@ -276,14 +324,14 @@ void execute_2016_day11_part1(FILE* file)
 				{
 					uint64 next_state_hash = next_state.to_hash();
 
-					if (!seen_floor_set.contains(next_state_hash))
+					if (seen_floor_set.find(next_state_hash) == seen_floor_set.end())
 					{
 						s_step_state new_step;
 						new_step.state = next_state;
 						new_step.distance = current_step.distance + 1;
 
-						state_queue.push(new_step);
-						seen_floor_set.add(next_state_hash);
+						state_queue->push(new_step);
+						seen_floor_set.insert(next_state_hash);
 					}
 				}
 			}
@@ -308,14 +356,14 @@ void execute_2016_day11_part1(FILE* file)
 					{
 						uint64 next_state_hash = next_state.to_hash();
 
-						if (!seen_floor_set.contains(next_state_hash))
+						if (seen_floor_set.find(next_state_hash) == seen_floor_set.end())
 						{
 							s_step_state new_step;
 							new_step.state = next_state;
 							new_step.distance = current_step.distance + 1;
 
-							state_queue.push(new_step);
-							seen_floor_set.add(next_state_hash);
+							state_queue->push(new_step);
+							seen_floor_set.insert(next_state_hash);
 						}
 					}
 				}
@@ -323,10 +371,5 @@ void execute_2016_day11_part1(FILE* file)
 		}
 	}
 
-	std::cout << "It took " << steps << " to move all of the chips and generators to the top flooor" << std::endl;
-}
-
-void execute_2016_day11_part2(FILE* file)
-{
-	std::cout << "Day 11 part 2" << std::endl;
+	return result;
 }
