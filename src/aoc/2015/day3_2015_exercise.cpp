@@ -3,7 +3,8 @@
 
 #include "aoc/infrastructure/exercise.h"
 
-#include <iostream>
+#include "foundation/io/log.h"
+
 #include <set>
 
 //-------------- constants
@@ -90,7 +91,7 @@ void execute_2015_day_part1(FILE* file)
 		points.insert(current_position);
 	}
 
-	std::cout << "Santa has visited " << points.size() << " unique houses" << std::endl;
+	n_log::output("Santa has visited {} unique houses\n", points.size());
 
 	free(line);
 }
@@ -142,7 +143,7 @@ void execute_2015_day3_part2(FILE* file)
 		move_santa = !move_santa;
 	}
 
-	std::cout << "Santa and robo santa have visited " << points.size() << " unique houses" << std::endl;
+	n_log::output("Santa and robo santa have visited {} unique houses\n", points.size());
 
 	free(line);
 }

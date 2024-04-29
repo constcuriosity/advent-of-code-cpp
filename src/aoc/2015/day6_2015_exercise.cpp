@@ -6,10 +6,9 @@
 #include "foundation/containers/static/static_bit_grid.h"
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_grid.h"
+#include "foundation/io/log.h"
 #include "foundation/math/basic_math.h"
 #include "foundation/utilities/string_utilities.h"
-
-#include <iostream>
 
 //-------------- prototypes
 
@@ -86,7 +85,7 @@ void execute_2015_day6_part1(FILE* file)
 		}
 	}
 
-	std::cout << "There are " << light_grid->count() << " lights turned on." << std::endl;
+	n_log::output("There are {} lights turned on\n", light_grid->count());
 
 	delete light_grid;
 }
@@ -138,7 +137,7 @@ void execute_2015_day6_part2(FILE* file)
 			total_brightness += value;
 		});
 
-	std::cout << "The total brightness value of all the lights is " << total_brightness << "." << std::endl << std::endl;
+	n_log::output("The total brightness value of all the lights is {}\n", total_brightness);
 
 	delete grid;
 }

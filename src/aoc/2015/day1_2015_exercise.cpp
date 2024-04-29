@@ -3,7 +3,7 @@
 
 #include "aoc/infrastructure/exercise.h"
 
-#include <iostream>
+#include "foundation/io/log.h"
 
 //-------------- constants
 
@@ -48,7 +48,7 @@ void execute_2015_day1_part1(FILE* file)
 		}
 	}
 
-	std::cout << "Santa is at floor: " << floor_index << std::endl;
+	n_log::output("Santa is at floor {}\n", floor_index);
 
 	free(line);
 }
@@ -80,7 +80,7 @@ void execute_2015_day1_part2(FILE* file)
 		}
 	}
 
-	std::cout << "The basement is reached at position " << basement_position << std::endl;
+	n_log::output("The basement is reached at position {}\n", basement_position);
 
 	free(line);
 }

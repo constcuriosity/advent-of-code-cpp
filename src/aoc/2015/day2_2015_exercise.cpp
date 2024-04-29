@@ -3,9 +3,8 @@
 
 #include "aoc/infrastructure/exercise.h"
 
+#include "foundation/io/log.h"
 #include "foundation/math/basic_math.h"
-
-#include <iostream>
 
 //-------------- prototypes
 
@@ -45,7 +44,7 @@ void execute_2015_day2_part1(FILE* file)
 		total_sqft += area + smallest_side;
 	}
 
-	std::cout << "The elves need " << total_sqft << " sqft of wrapping paper" << std::endl;
+	n_log::output("The elves need {} sqft of wrapping paper\n", total_sqft);
 }
 
 void execute_2015_day2_part2(FILE* file)
@@ -67,5 +66,5 @@ void execute_2015_day2_part2(FILE* file)
 		total_feet += perimeter + volume;
 	}
 
-	std::cout << "The elves need " << total_feet << " feet of wrapping ribbon" << std::endl;
+	n_log::output("The elves need {} feet of wrapping ribbon\n", total_feet);
 }

@@ -4,8 +4,7 @@
 #include "aoc/infrastructure/exercise.h"
 
 #include "foundation/containers/static/static_string.h"
-
-#include <iostream>
+#include "foundation/io/log.h"
 
 //-------------- prototypes
 
@@ -43,7 +42,7 @@ void execute_2015_day5_part1(FILE* file)
 		if (is_nice_string_v1(line_buffer)) { nice_count++; }
 	}
 
-	std::cout << "There are " << nice_count << " nice strings in the file using the first ruleset." << std::endl << std::endl;
+	n_log::output("There are {} nice strings in the file using the first ruleset\n", nice_count);
 }
 
 void execute_2015_day5_part2(FILE* file)
@@ -58,7 +57,7 @@ void execute_2015_day5_part2(FILE* file)
 		if (is_nice_string_v2(line_buffer)) { nice_count++; }
 	}
 
-	std::cout << "There are " << nice_count << " nice strings in the file using the second ruleset." << std::endl << std::endl;
+	n_log::output("There are {} nice strings in the file using the second ruleset\n", nice_count);
 }
 
 //-------------- private implementations
