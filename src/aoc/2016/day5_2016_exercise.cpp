@@ -4,10 +4,9 @@
 #include "aoc/infrastructure/exercise.h"
 
 #include "foundation/containers/static/static_string.h"
-#include "foundation/utilities/md5_hash.h"
+#include "foundation/io/log.h"
 #include "foundation/memory/memory_utilities.h"
-
-#include <iostream>
+#include "foundation/utilities/md5_hash.h"
 
 //-------------- constants
 
@@ -61,7 +60,7 @@ void execute_2016_day5_part1(FILE* file)
 		}
 	}
 
-	std::cout << "The password for the security door is " << password.get_string() << std::endl;
+	n_log::output("The password for the security door is {}\n", password.get_string());
 }
 
 void execute_2016_day5_part2(FILE* file)
@@ -113,5 +112,5 @@ void execute_2016_day5_part2(FILE* file)
 		increment++;
 	}
 
-	std::cout << "The password for the security door with the more complicated security is " << password << std::endl;
+	n_log::output("The password for the security door with the more complicated security is {}\n", password);
 }

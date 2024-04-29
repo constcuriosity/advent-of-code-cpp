@@ -5,9 +5,8 @@
 
 #include "foundation/containers/static/static_array.h"
 #include "foundation/containers/static/static_string.h"
+#include "foundation/io/log.h"
 #include "foundation/utilities/sort.h"
-
-#include <iostream>
 
 //-------------- constants
 
@@ -56,7 +55,7 @@ void execute_2016_day4_part1(FILE* file)
 		}
 	}
 
-	std::cout << "The sum of all sector ids with valid rooms is " << sector_id_sum << std::endl;
+	n_log::output("The sum of all sector ids with valid rooms is {}\n", sector_id_sum);
 }
 
 void execute_2016_day4_part2(FILE* file)
@@ -90,7 +89,7 @@ void execute_2016_day4_part2(FILE* file)
 		}
 	}
 
-	std::cout << "Found room \"" << target_room_name.get_string() << "\" with sector id " << north_pole_sector_id << std::endl;
+	n_log::output("Found room \"{}\" with sector id {}\n", target_room_name.get_string(), north_pole_sector_id);
 }
 
 bool is_room_real(const s_string_view& name, const s_string_view& checksum)

@@ -5,10 +5,9 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/dynamic/dynamic_set.h"
+#include "foundation/io/log.h"
 #include "foundation/memory/memory_utilities.h"
 #include "foundation/math/basic_math.h"
-
-#include <iostream>
 
 //-------------- constants
 
@@ -142,7 +141,7 @@ void execute_2016_day1_part1(FILE* file)
 	}
 	while (direction_tokens.advance());
 
-	std::cout << "Start position is " << n_math::abs(x) + n_math::abs(y) << " blocks away from Easter Bunny HQ" << std::endl;
+	n_log::output("Start position is {} blocks away from Easter Bunny HQ\n", n_math::abs(x) + n_math::abs(y));
 }
 
 void execute_2016_day1_part2(FILE* file)
@@ -224,5 +223,5 @@ void execute_2016_day1_part2(FILE* file)
 	}
 	while (!target_found && direction_tokens.advance());
 
-	std::cout << "First location visited twice is " << n_math::abs(target_point.x) + n_math::abs(target_point.y) << " blocks from the starting location" << std::endl;
+	n_log::output("First location visited twice is {} blocks from the starting location\n", n_math::abs(target_point.x) + n_math::abs(target_point.y));
 }

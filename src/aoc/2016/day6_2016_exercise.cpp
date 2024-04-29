@@ -5,8 +5,7 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_grid.h"
-
-#include <iostream>
+#include "foundation/io/log.h"
 
 //-------------- constants
 
@@ -57,7 +56,7 @@ void execute_2016_day6_part1(FILE* file)
 		final_message.append_char(most_common_character);
 	}
 
-	std::cout << "Error corrected message reads: " << final_message.get_string() << std::endl;
+	n_log::output("Error corrected message reads: {}\n", final_message.get_string());
 }
 
 void execute_2016_day6_part2(FILE* file)
@@ -85,7 +84,7 @@ void execute_2016_day6_part2(FILE* file)
 		final_message.append_char(least_common_character);
 	}
 
-	std::cout << "Error corrected message reads: " << final_message.get_string() << std::endl;
+	n_log::output("Error corrected message reads: {}\n", final_message.get_string());
 }
 
 void gather_character_counts(FILE* file, c_static_grid<uint32, 8, 26>* out_counts)

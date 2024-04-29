@@ -6,11 +6,11 @@
 #include "foundation/containers/dynamic/dynamic_set.h"
 #include "foundation/containers/static/static_array.h"
 #include "foundation/containers/static/static_string.h"
-#include "foundation/utilities/bit_utilities.h"
+#include "foundation/io/log.h"
 #include "foundation/math/vector_math.h"
+#include "foundation/utilities/bit_utilities.h"
 #include "foundation/utilities/wyhash.h"
 
-#include <iostream>
 #include <unordered_map>
 
 //-------------- constants
@@ -165,7 +165,7 @@ void execute_2016_day13_part1(FILE* file)
 
 	int32 steps_to_target = final_path.get_size() - 1;
 
-	std::cout << "It took " << steps_to_target << " steps to get to the target position" << std::endl;
+	n_log::output("It took {} steps to get to the target position\n", steps_to_target);
 }
 
 void execute_2016_day13_part2(FILE* file)
@@ -213,9 +213,9 @@ void execute_2016_day13_part2(FILE* file)
 		}
 	}
 
-	int32 unique_location_count = current_cost_map.size();
+	int32 unique_location_count = static_cast<int32>(current_cost_map.size());
 
-	std::cout << "There are " << unique_location_count << " unique locations within 50 steps" << std::endl;
+	n_log::output("There are {} unique locations within 50 steps\n", unique_location_count);
 }
 
 static_function int32 distance_heuristic(const s_point2i& current_position, const s_point2i& target_position)

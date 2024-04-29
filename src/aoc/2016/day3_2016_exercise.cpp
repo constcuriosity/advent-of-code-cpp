@@ -6,11 +6,9 @@
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_grid.h"
 #include "foundation/containers/dynamic/string.h"
-#include "foundation/memory/memory_utilities.h"
-
+#include "foundation/io/log.h"
 #include "foundation/math/vector_math.h"
-
-#include <iostream>
+#include "foundation/memory/memory_utilities.h"
 
 //-------------- constants
 
@@ -64,7 +62,7 @@ void execute_2016_day3_part1(FILE* file)
 		}
 	}
 
-	std::cout << "There are " << possible_triangles << " possible triangles if you count by rows." << std::endl;
+	n_log::output("There are {} possible triangles if you count by rows\n", possible_triangles);
 }
 
 void execute_2016_day3_part2(FILE* file)
@@ -97,7 +95,7 @@ void execute_2016_day3_part2(FILE* file)
 		rewind(file);
 	}
 
-	std::cout << "There are " << possible_triangles << " possible triangles if you count by columns." << std::endl;
+	n_log::output("There are {} possible triangles if you count by columns\n", possible_triangles);
 }
 
 bool is_triangle_possible(const s_triangle& t0)

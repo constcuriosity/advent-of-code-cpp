@@ -7,8 +7,7 @@
 #include "foundation/containers/static/static_array.h"
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/view/string_view.h"
-
-#include <iostream>
+#include "foundation/io/log.h"
 
 //-------------- constants
 
@@ -142,7 +141,7 @@ void execute_2016_day12_part1(FILE* file)
 
 	computer.execute();
 
-	std::cout << "The value within register a is " << computer.get_register_value('a') << std::endl;
+	n_log::output("The value within register as is {}\n", computer.get_register_value('a'));
 }
 
 void execute_2016_day12_part2(FILE* file)
@@ -155,7 +154,7 @@ void execute_2016_day12_part2(FILE* file)
 
 	computer.execute();
 
-	std::cout << "The value within register a is when register c is initialized to 1 is " << computer.get_register_value('a') << std::endl;
+	n_log::output("The value within register a is when register c is initialized to 1 is {}\n", computer.get_register_value('a'));
 }
 
 static_function void build_instruction_vector(FILE* file, c_instruction_vector* out_instructions)

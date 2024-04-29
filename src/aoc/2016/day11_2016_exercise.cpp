@@ -8,9 +8,9 @@
 #include "foundation/containers/static/static_array.h"
 #include "foundation/containers/static/static_set.h"
 #include "foundation/containers/static/static_vector.h"
+#include "foundation/io/log.h"
 #include "foundation/utilities/wyhash.h"
 
-#include <iostream>
 #include <unordered_set>
 
 //-------------- constants
@@ -52,7 +52,7 @@ struct s_item
 
 	uint64 to_hash() const { return 1ULL << (type * k_element + element); }
 
-	void print() const { std::cout << " " << (is_generator() ? "g" : "m") << element << " "; }
+	void print() const { n_log::output(" {}{} ", is_generator() ? "g" : "m", static_cast<int32>(element)); }
 
 	bool operator==(const s_item& other) const { return type == other.type && element == other.element; }
 	bool operator<(const s_item& other) const
@@ -151,16 +151,16 @@ struct s_building_state
 
 	void print() const
 	{
-		std::cout << current_floor << " ";
+		n_log::output("{} ", current_floor);
 		for (int32 floor_index = 0; floor_index < k_floor_count; floor_index++)
 		{
-			std::cout << "|" << floor_index << "|";
+			n_log::output("|{}|", floor_index);
 			for (int32 item_index = 0; item_index < floors[floor_index].get_size(); item_index++)
 			{
 				floors[floor_index][item_index].print();
 			}
 		}
-		std::cout << std::endl;
+		n_log::output("\n");
 	}
 
 	c_static_array<c_floor_vector, k_floor_count> floors;
@@ -171,7 +171,7 @@ struct s_step_state
 {
 	void print() const
 	{
-		std::cout << distance << " ";
+		n_log::output("{} ", distance);
 		state.print();
 	}
 
@@ -235,7 +235,7 @@ void execute_2016_day11_part1(FILE* file)
 
 	steps = move_items(&state_queue);
 
-	std::cout << "It took " << steps << " to move all of the chips and generators to the top floor" << std::endl;
+	n_log::output("It took {} steps to move all of the chips and generators to the top floor\n", steps);
 }
 
 void execute_2016_day11_part2(FILE* file)
@@ -277,7 +277,7 @@ void execute_2016_day11_part2(FILE* file)
 
 	steps = move_items(&state_queue);
 
-	std::cout << "It took " << steps << " to move all of the chips and generators to the top flooor" << std::endl;
+	n_log::output("It took {} steps to move all of the chips and generators to the top floor\n", steps);
 }
 
 static_function int32 move_items(c_state_queue* state_queue)

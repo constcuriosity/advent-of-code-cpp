@@ -6,8 +6,7 @@
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_grid.h"
 #include "foundation/containers/view/string_view.h"
-
-#include <iostream>
+#include "foundation/io/log.h"
 
 //-------------- constants
 
@@ -106,11 +105,11 @@ void execute_2016_day8_part1(FILE* file)
 		{
 			if (previous_row != y)
 			{
-				std::cout << std::endl;
+				n_log::output("\n");
 				previous_row = y;
 			}
 
-			std::cout << value;
+			n_log::output("{}", value);
 
 			if (value == '#')
 			{
@@ -118,10 +117,10 @@ void execute_2016_day8_part1(FILE* file)
 			}
 		});
 
-	std::cout << std::endl << "There are " << filled_amount << " filled pixels" << std::endl;
+	n_log::output("\nThere are {} filled pixels\n", filled_amount);
 }
 
 void execute_2016_day8_part2(FILE* file)
 {
-	std::cout << "Look at the output of the previous day to get answer for part 2" << std::endl;
+	n_log::output("Look at the output of the previous day to get answer for part 2\n");
 }

@@ -5,10 +5,8 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_grid.h"
-
+#include "foundation/io/log.h"
 #include "foundation/math/vector_math.h"
-
-#include <iostream>
 
 //-------------- constants
 
@@ -87,7 +85,7 @@ void execute_2016_day2_part1(FILE* file)
 		keypad_code.append_char(keypad.get_value(current_coord.x, current_coord.y));
 	}
 
-	std::cout << "The keycode to the theoretical bathroom lock is " << keypad_code.get_string() << std::endl;
+	n_log::output("The keycode to the theoretical bathroom lock is {}\n", keypad_code.get_string());
 }
 
 void execute_2016_day2_part2(FILE* file)
@@ -162,5 +160,5 @@ void execute_2016_day2_part2(FILE* file)
 		keypad_code.append_char(keypad.get_value(current_coord.x, current_coord.y));
 	}
 
-	std::cout << "The keycode to the real complicated bathroom lock is " << keypad_code.get_string() << std::endl;
+	n_log::output("The keycode to the real complicated bathroom lock is {}\n", keypad_code.get_string());
 }

@@ -5,8 +5,7 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/dynamic/dynamic_set.h"
-
-#include <iostream>
+#include "foundation/io/log.h"
 
 //-------------- constants
 
@@ -54,7 +53,7 @@ void execute_2016_day7_part1(FILE* file)
 		}
 	}
 
-	std::cout << result << " IPs support TLS" << std::endl;
+	n_log::output("{} IPs support TLS\n", result);
 }
 
 void execute_2016_day7_part2(FILE* file)
@@ -74,7 +73,7 @@ void execute_2016_day7_part2(FILE* file)
 		}
 	}
 
-	std::cout << result << " IPs support SSL" << std::endl;
+	n_log::output("{} IPs support SSL\n", result);
 }
 
 bool ip_supports_tls(s_string_view ip_view)

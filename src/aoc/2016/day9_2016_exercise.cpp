@@ -7,9 +7,8 @@
 #include "foundation/containers/dynamic/string.h"
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/view/string_view.h"
+#include "foundation/io/log.h"
 #include "foundation/memory/memory_utilities.h"
-
-#include <iostream>
 
 //-------------- constants
 
@@ -94,7 +93,7 @@ void execute_2016_day9_part1(FILE* file)
 		}
 	}
 
-	std::cout << "Decompressed length of the file with version 1 compression is " << decompressed_buffer.length() << std::endl;
+	n_log::output("Decompressed length of the file with version 1 compression is {}\n", decompressed_buffer.length());
 
 	buffer->~c_file_string();
 	c_memory_utilities::free(buffer);
@@ -156,7 +155,7 @@ void execute_2016_day9_part2(FILE* file)
 		}
 	}
 
-	std::cout << "Decompressed length of the file with version 2 compression is " << decompressed_length << std::endl;
+	n_log::output("Decompressed length of the file with version 2 compression is {}\n", decompressed_length);
 
 	buffer->~c_file_string();
 	c_memory_utilities::free(buffer);

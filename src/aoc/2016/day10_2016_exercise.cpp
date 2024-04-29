@@ -6,8 +6,8 @@
 #include "foundation/containers/static/static_array.h"
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/view/string_view.h"
+#include "foundation/io/log.h"
 
-#include <iostream>
 #include <unordered_map>
 
 //-------------- constants
@@ -84,7 +84,7 @@ void execute_2016_day10_part1(FILE* file)
 		}
 	}
 
-	std::cout << "Bot " << target_bot_id << " is the one that processes chips 17 and 61" << std::endl;
+	n_log::output("Bot {} is the one that processes chips 17 and 61\n", target_bot_id);
 }
 
 void execute_2016_day10_part2(FILE* file)
@@ -118,7 +118,7 @@ void execute_2016_day10_part2(FILE* file)
 		}
 	}
 
-	std::cout << "Multiplying output bins 0, 1, and 2 altogether gives " << result << std::endl;
+	n_log::output("Multiplying output bins 0, 1, and 2 altogether gives {}\n", result);
 }
 
 void build_bot_map(FILE* file, std::unordered_map<int16, s_bot>* out_map)
