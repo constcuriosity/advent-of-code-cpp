@@ -4,11 +4,11 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/dynamic/dynamic_set.h"
+#include "foundation/io/log.h"
 #include "foundation/math/basic_math.h"
 #include "foundation/utilities/sort.h"
 #include "foundation/utilities/wyhash.h"
 
-#include <iostream>
 #include <unordered_map>
 
 //-------------- constants
@@ -110,7 +110,7 @@ void execute_2023_day8_part1(FILE* file)
 		}
 	}
 
-	std::cout << "It took " << steps << " steps to travel from node AAA to ZZZ." << std::endl;
+	n_log::output("It took {} steps to travel from AAA to ZZZ\n", steps);
 }
 
 void execute_2023_day8_part2(FILE* file)
@@ -189,7 +189,7 @@ void execute_2023_day8_part2(FILE* file)
 		}
 	}
 
-	std::cout << "It took " << steps << " steps for all ids ending with A to now end with Z." << std::endl;
+	n_log::output("It took {} steps for all ids ending with A to now end with Z\n", steps);
 }
 
 int32 convert_to_id(s_string_view view)

@@ -6,10 +6,9 @@
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/dynamic/dynamic_vector.h"
 #include "foundation/containers/static/static_set.h"
+#include "foundation/io/log.h"
 #include "foundation/math/basic_math.h"
 #include "foundation/utilities/sort.h"
-
-#include <iostream>
 
 //-------------- constants
 
@@ -187,7 +186,7 @@ void execute_2023_day7_part1(FILE* file)
 		total_winnings += current_hand.bid * (hand_index + 1);
 	}
 
-	std::cout << "Total winnings of all hands w/ Jack rules: " << total_winnings << std::endl;
+	n_log::output("Total winnings of all hands w/ Jack rules is {}\n", total_winnings);
 }
 
 void execute_2023_day7_part2(FILE* file)
@@ -236,7 +235,7 @@ void execute_2023_day7_part2(FILE* file)
 		total_winnings += current_hand.bid * (hand_index + 1);
 	}
 
-	std::cout << "Total winnings of all hands w/ Joker rules: " << total_winnings << std::endl;
+	n_log::output("Total winnings of all hands w/ Joker rules is {}\n", total_winnings);
 }
 
 e_card_value get_card_value_for_char(char value, e_j_mode mode)

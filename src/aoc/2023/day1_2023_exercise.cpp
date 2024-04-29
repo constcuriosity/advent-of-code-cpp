@@ -5,9 +5,8 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_array.h"
+#include "foundation/io/log.h"
 #include "foundation/math/basic_math.h"
-
-#include <iostream>
 
 //-------------- constants
 
@@ -67,7 +66,7 @@ void execute_2023_day1_part1(FILE* file)
 		total += first_digit * 10 + second_digit;
 	}
 
-	std::cout << "The total callibration amount for the first question is: " << total << std::endl;
+	n_log::output("The total callibration amount for the first question is {}\n", total);
 }
 
 void execute_2023_day1_part2(FILE* file)
@@ -119,5 +118,5 @@ void execute_2023_day1_part2(FILE* file)
 		total += first_digit * 10 + second_digit;
 	}
 
-	std::cout << "The total callibration amount for the second question is: " << total << std::endl;
+	n_log::output("The total callibration amount for the second question is {}\n", total);
 }

@@ -6,9 +6,8 @@
 #include "foundation/containers/static/static_array.h"
 #include "foundation/containers/static/static_set.h"
 #include "foundation/containers/static/static_string.h"
+#include "foundation/io/log.h"
 #include "foundation/math/basic_math.h"
-
-#include <iostream>
 
 //-------------- constants
 
@@ -81,8 +80,7 @@ void execute_2023_day4_part1(FILE* file)
 		total_points += points;
 	}
 
-
-	std::cout << "The number of earned points across all games is: " << total_points << std::endl;
+	n_log::output("The number of earned points across all games is {}\n", total_points);
 }
 
 void execute_2023_day4_part2(FILE* file)
@@ -151,5 +149,5 @@ void execute_2023_day4_part2(FILE* file)
 		total_cards += scorecard_counts[scorecard_index];
 	}
 
-	std::cout << "The total number of earned scratchards is: " << total_cards << std::endl;
+	n_log::output("The number of earned scratchards {}\n", total_cards);
 }

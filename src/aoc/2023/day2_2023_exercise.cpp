@@ -5,9 +5,8 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_array.h"
+#include "foundation/io/log.h"
 #include "foundation/math/basic_math.h"
-
-#include <iostream>
 
 //-------------- constants
 
@@ -95,7 +94,7 @@ void execute_2023_day2_part1(FILE* file)
 		}
 	}
 
-	std::cout << "The total sum of all viable games with 12 red, 13 green, and 14 blue cubes is: " << total_game_ids << std::endl;
+	n_log::output("The total sum of all viable games with 12 red, 13 green, and 14 blue cubes is {}\n", total_game_ids);
 }
 
 void execute_2023_day2_part2(FILE* file)
@@ -161,5 +160,5 @@ void execute_2023_day2_part2(FILE* file)
 		total_power += game_power;
 	}
 
-	std::cout << "The sum of all powers for all games is: " << total_power << std::endl;
+	n_log::output("The sum of all powers for all games is {}\n", total_power);
 }

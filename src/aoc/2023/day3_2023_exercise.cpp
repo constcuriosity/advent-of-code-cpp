@@ -5,10 +5,9 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_grid.h"
+#include "foundation/io/log.h"
 #include "foundation/math/basic_math.h"
 #include "foundation/memory/memory_utilities.h"
-
-#include <iostream>
 
 //-------------- constants
 
@@ -85,7 +84,7 @@ void execute_2023_day3_part1(FILE* file)
 		}
 	}
 
-	std::cout << "Sum of all of the part numbers: " << part_number_total << std::endl;
+	n_log::output("Som of all of the part numbers is {}\n", part_number_total);
 
 	c_memory_utilities::free<c_engine_schematic>(schematic);
 }
@@ -154,7 +153,7 @@ void execute_2023_day3_part2(FILE* file)
 		}
 	}
 
-	std::cout << "Sum of all of the gear rations: " << gear_ratio_total << std::endl;
+	n_log::output("Som of all of the gear ratios is {}\n", gear_ratio_total);
 
 	c_memory_utilities::free<c_engine_schematic>(schematic);
 }

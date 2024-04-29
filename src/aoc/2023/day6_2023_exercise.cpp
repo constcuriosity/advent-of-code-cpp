@@ -5,9 +5,8 @@
 #include "foundation/containers/static/static_array.h"
 #include "foundation/containers/static/static_string.h"
 #include "foundation/containers/static/static_vector.h"
+#include "foundation/io/log.h"
 #include "foundation/math/basic_math.h"
-
-#include <iostream>
 
 //-------------- constants
 
@@ -95,7 +94,7 @@ void execute_2023_day6_part1(FILE* file)
 		margin_of_error *= race.winning_time_range;
 	}
 
-	std::cout << "The margin of error across all races is: " << margin_of_error << std::endl;
+	n_log::output("The margin of error across all races is {}\n", margin_of_error);
 }
 
 void execute_2023_day6_part2(FILE* file)
@@ -146,5 +145,5 @@ void execute_2023_day6_part2(FILE* file)
 	real64 difference = first_intersection - second_intersection;
 	int64 winning_time_range = static_cast<int64>(abs(difference));
 
-	std::cout << "Total number of ways to beat the best distance: " << winning_time_range << std::endl;
+	n_log::output("There are {} toal number of ways to beat the best distance\n", winning_time_range);
 }
