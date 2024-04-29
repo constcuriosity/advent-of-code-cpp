@@ -90,7 +90,7 @@ struct s_building_state
 			}
 		}
 
-		hash |= current_floor << k_element * k_item_type * k_floor_count;
+		hash |= static_cast<uint64>(current_floor) << k_element * k_item_type * k_floor_count;
 
 		return hash;
 	}
@@ -202,6 +202,8 @@ extern const s_aoc_exercise_data k_2016_day11_exercise
 
 void execute_2016_day11_part1(FILE* file)
 {
+	UNUSED(file);
+
 	int32 steps = 0;
 	std::unordered_set<uint64> seen_floor_set;
 	c_state_queue state_queue;
@@ -240,6 +242,8 @@ void execute_2016_day11_part1(FILE* file)
 
 void execute_2016_day11_part2(FILE* file)
 {
+	UNUSED(file);
+
 	int32 steps = 0;
 	std::unordered_set<uint64> seen_floor_set;
 	c_state_queue state_queue;

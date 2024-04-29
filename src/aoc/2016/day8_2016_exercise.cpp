@@ -59,6 +59,7 @@ void execute_2016_day8_part1(FILE* file)
 			// Gotta subtract 1 to convert these to proper indicies
 			screen.for_each(0, 0, static_cast<uint32>(width) - 1, static_cast<uint32>(height) - 1,
 				[&](char& value, uint32 x, uint32 y) {
+					UNUSED(x); UNUSED(y);
 					value = '#';
 				});
 		}
@@ -102,25 +103,28 @@ void execute_2016_day8_part1(FILE* file)
 	uint32 previous_row = 0;
 	uint32 filled_amount = 0;
 	screen.for_each([&](char value, uint32 x, uint32 y)
+	{
+		UNUSED(x);
+		if (previous_row != y)
 		{
-			if (previous_row != y)
-			{
-				n_log::output("\n");
-				previous_row = y;
-			}
+			n_log::output("\n");
+			previous_row = y;
+		}
 
-			n_log::output("{}", value);
+		n_log::output("{}", value);
 
-			if (value == '#')
-			{
-				filled_amount++;
-			}
-		});
+		if (value == '#')
+		{
+			filled_amount++;
+		}
+	});
 
 	n_log::output("\nThere are {} filled pixels\n", filled_amount);
 }
 
 void execute_2016_day8_part2(FILE* file)
 {
+	UNUSED(file);
+
 	n_log::output("Look at the output of the previous day to get answer for part 2\n");
 }

@@ -54,7 +54,7 @@ void execute_2016_day3_part1(FILE* file)
 	s_triangle current_triangle = { 0, 0, 0 };
 
 	while (feof(file) == 0 &&
-		fscanf(file, "%d %d %d", &current_triangle.a, &current_triangle.b, &current_triangle.c) != EOF)
+		fscanf_s(file, "%d %d %d", &current_triangle.a, &current_triangle.b, &current_triangle.c) != EOF)
 	{
 		if (is_triangle_possible(current_triangle))
 		{
@@ -76,7 +76,7 @@ void execute_2016_day3_part2(FILE* file)
 		int32 values[3];
 
 		while (feof(file) == 0 &&
-			fscanf(file, "%d %d %d", &values[0], &values[1], &values[2]) != EOF)
+			fscanf_s(file, "%d %d %d", &values[0], &values[1], &values[2]) != EOF)
 		{
 			current_triangle.values[index_offset] = values[column_offset];
 			index_offset++;

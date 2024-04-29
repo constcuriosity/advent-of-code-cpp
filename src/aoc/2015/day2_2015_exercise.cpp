@@ -32,7 +32,7 @@ void execute_2015_day2_part1(FILE* file)
 	int32 current_height = 0;
 
 	while (feof(file) == 0 &&
-		fscanf(file, "%dx%dx%d", &current_length, &current_width, &current_height) != EOF)
+		fscanf_s(file, "%dx%dx%d", &current_length, &current_width, &current_height) != EOF)
 	{
 		int32 side_lw = current_length * current_width;
 		int32 side_lh = current_length * current_height;
@@ -55,7 +55,7 @@ void execute_2015_day2_part2(FILE* file)
 	int32 current_height = 0;
 
 	while (feof(file) == 0 &&
-		fscanf(file, "%dx%dx%d", &current_length, &current_width, &current_height) != EOF)
+		fscanf_s(file, "%dx%dx%d", &current_length, &current_width, &current_height) != EOF)
 	{
 		int32 perimeter = current_length + current_width + current_height;
 		perimeter -= n_math::max(current_length, n_math::max(current_width, current_height));

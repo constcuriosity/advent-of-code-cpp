@@ -89,7 +89,7 @@ public:
 			}
 			else if (current_instruction.type == _instruction_type_jump)
 			{
-				int64 jump_value = current_instruction.arg_1.type == _argument_type_constant
+				int32 jump_value = current_instruction.arg_1.type == _argument_type_constant
 					? current_instruction.arg_1.value
 					: m_values[current_instruction.arg_1.value];
 
@@ -105,7 +105,7 @@ public:
 		}
 	}
 
-	void set_register_value(char reg, int64 value) { m_values[reg - 'a'] = value; }
+	void set_register_value(char reg, int32 value) { m_values[reg - 'a'] = value; }
 	int64 get_register_value(char reg) const { return m_values[reg - 'a']; }
 
 private:
