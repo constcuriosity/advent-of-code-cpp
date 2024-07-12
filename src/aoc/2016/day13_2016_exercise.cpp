@@ -231,7 +231,7 @@ static_function bool is_wall(const s_point2i &p, int64 seed)
 	{
 		int64 sum = p.x*p.x + 3*p.x + 2*p.x*p.y + p.y + p.y*p.y + seed;
 
-		is_wall = n_bit_utilities::count(reinterpret_cast<byte*>(&sum), sizeof(int64)) % 2 != 0;
+		is_wall = n_bit::count(reinterpret_cast<byte*>(&sum), sizeof(int64)) % 2 != 0;
 	}
 
 	return is_wall;
