@@ -5,6 +5,7 @@
 
 #include "foundation/containers/static/static_string.h"
 #include "foundation/memory/memory_utilities.h"
+#include "foundation/utilities/swap.h"
 #include "foundation/io/log.h"
 
 //-------------- constants
@@ -42,9 +43,7 @@ void execute_2016_day16_part1(FILE* file)
 	// Build up data
 	while (current_data->length() < k_target_disc_length)
 	{
-		c_exercise_string* temp = prev_data;
-		prev_data = current_data;
-		current_data = temp;
+		swap(prev_data, current_data);
 
 		current_data->set(prev_data->get_string());
 		current_data->append_char('0');
@@ -73,9 +72,7 @@ void execute_2016_day16_part1(FILE* file)
 	{
 		current_data_size = current_data_size >> 1;
 
-		c_exercise_string* temp = prev_data;
-		prev_data = current_data;
-		current_data = temp;
+		swap(prev_data, current_data);
 
 		current_data->clear();
 		for (int32 compress_index = 0; compress_index < current_data_size; compress_index++)
