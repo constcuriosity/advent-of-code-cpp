@@ -69,7 +69,7 @@ void execute_2016_day5_part2(FILE* file)
 	fgets(line_buffer.get_string(), line_buffer.k_capacity, file);
 
 	char password[k_password_length + 1];
-	c_memory_utilities::zero(password, k_password_length + 1);
+	n_memory::zero(password, k_password_length + 1);
 	uint32 increment = 0;
 
 	while (true)

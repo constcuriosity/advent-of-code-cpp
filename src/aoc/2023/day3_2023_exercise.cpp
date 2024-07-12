@@ -86,7 +86,7 @@ void execute_2023_day3_part1(FILE* file)
 
 	n_log::output("Som of all of the part numbers is {}\n", part_number_total);
 
-	c_memory_utilities::free<c_engine_schematic>(schematic);
+	n_memory::free<c_engine_schematic>(schematic);
 }
 
 void execute_2023_day3_part2(FILE* file)
@@ -155,12 +155,12 @@ void execute_2023_day3_part2(FILE* file)
 
 	n_log::output("Som of all of the gear ratios is {}\n", gear_ratio_total);
 
-	c_memory_utilities::free<c_engine_schematic>(schematic);
+	n_memory::free<c_engine_schematic>(schematic);
 }
 
 c_engine_schematic* generate_engine_schematic(FILE* file)
 {
-	c_engine_schematic* schematic = c_memory_utilities::allocate<c_engine_schematic>();
+	c_engine_schematic* schematic = n_memory::allocate<c_engine_schematic>();
 
 	int32 current_column = 0;
 	int32 current_row = 0;

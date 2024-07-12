@@ -70,12 +70,12 @@ struct s_building_state
 {
 	s_building_state()
 	{
-		c_memory_utilities::zero<s_building_state>(this);
+		n_memory::zero<s_building_state>(this);
 	}
 
 	s_building_state(const s_building_state& other)
 	{
-		c_memory_utilities::zero<s_building_state>(this);
+		n_memory::zero<s_building_state>(this);
 		memcpy(this, &other, sizeof(s_building_state));
 	}
 

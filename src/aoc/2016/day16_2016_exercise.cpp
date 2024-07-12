@@ -96,8 +96,8 @@ void execute_2016_day16_part2(FILE* file)
 	typedef c_static_string<35651584 * 2> c_exercise_string;
 
 	// $NOTE I really need to get around overriding the new operator...
-	c_exercise_string *line1 = c_memory_utilities::allocate<c_exercise_string>();
-	c_exercise_string *line2 = c_memory_utilities::allocate<c_exercise_string>();
+	c_exercise_string *line1 = n_memory::allocate<c_exercise_string>();
+	c_exercise_string *line2 = n_memory::allocate<c_exercise_string>();
 	new (line1) c_exercise_string();
 	new (line2) c_exercise_string();
 
@@ -155,6 +155,6 @@ void execute_2016_day16_part2(FILE* file)
 
 	n_log::output("The checksum of the second disk to fill is {}\n", current_data->get_string());
 
-	c_memory_utilities::free(line1);
-	c_memory_utilities::free(line2);
+	n_memory::free(line1);
+	n_memory::free(line2);
 }

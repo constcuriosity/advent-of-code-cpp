@@ -45,7 +45,7 @@ void execute_2016_day9_part1(FILE* file)
 	typedef c_static_string<20 * k_kilobyte> c_file_string;
 	
 	// $TODO Wow, it really makes you think I should override new, doesn't it
-	c_file_string *buffer = c_memory_utilities::allocate<c_file_string>();
+	c_file_string *buffer = n_memory::allocate<c_file_string>();
 	new(buffer) c_file_string();
 
 	// Make sure that we load the whole file into memory
@@ -96,7 +96,7 @@ void execute_2016_day9_part1(FILE* file)
 	n_log::output("Decompressed length of the file with version 1 compression is {}\n", decompressed_buffer.length());
 
 	buffer->~c_file_string();
-	c_memory_utilities::free(buffer);
+	n_memory::free(buffer);
 }
 
 void execute_2016_day9_part2(FILE* file)
@@ -104,7 +104,7 @@ void execute_2016_day9_part2(FILE* file)
 	typedef c_static_string<20 * k_kilobyte> c_file_string;
 
 	// $TODO Wow, it really makes you think I should override new, doesn't it
-	c_file_string* buffer = c_memory_utilities::allocate<c_file_string>();
+	c_file_string* buffer = n_memory::allocate<c_file_string>();
 	new(buffer) c_file_string();
 
 	// Make sure that we load the whole file into memory
@@ -158,7 +158,7 @@ void execute_2016_day9_part2(FILE* file)
 	n_log::output("Decompressed length of the file with version 2 compression is {}\n", decompressed_length);
 
 	buffer->~c_file_string();
-	c_memory_utilities::free(buffer);
+	n_memory::free(buffer);
 }
 
 int32 parse_marker(const utf8* string, int32* out_length, int32* out_count)
