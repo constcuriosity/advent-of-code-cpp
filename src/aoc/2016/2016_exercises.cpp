@@ -21,6 +21,7 @@ extern const s_aoc_exercise_data k_2016_day13_exercise;
 extern const s_aoc_exercise_data k_2016_day14_exercise;
 extern const s_aoc_exercise_data k_2016_day15_exercise;
 extern const s_aoc_exercise_data k_2016_day16_exercise;
+extern const s_aoc_exercise_data k_2016_day17_exercise;
 
 extern const s_aoc_exercise_data* k_2016_exercises[] =
 {
@@ -40,6 +41,7 @@ extern const s_aoc_exercise_data* k_2016_exercises[] =
 	& k_2016_day14_exercise,
 	& k_2016_day15_exercise,
 	& k_2016_day16_exercise,
+	& k_2016_day17_exercise,
 };
 
 extern const uint32 k_2016_exercise_count = ARRAY_SIZE(k_2016_exercises);
