@@ -15,7 +15,7 @@ void c_aoc_exercise_runner::initialize()
 		m_data.year,
 		m_data.day);
 
-	if (n_io::file_exists(file_path.get_string()))
+	if (file_exists(file_path.get_string()))
 	{
 		fopen_s(&m_file, file_path.get_string(), "r");
 	}

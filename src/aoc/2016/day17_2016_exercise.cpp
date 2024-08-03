@@ -12,7 +12,7 @@
 
 //-------------- prototypes
 
-void execute_2016_day17_part1(FILE* file);
+void execute_2016_day17_part1(FILE * file);
 void execute_2016_day17_part2(FILE* file);
 
 //-------------- globals
